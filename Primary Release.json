@@ -1,7 +1,7 @@
 {
     "source": 2,
     "id": 2,
-    "revision": 8,
+    "revision": 9,
     "name": "Primary Release",
     "description": null,
     "createdBy": {
@@ -19,7 +19,7 @@
         "url": "https://app.vssps.visualstudio.com/A23c752fb-0c7e-40ce-b5fc-276e6094b415/_apis/Identities/6582fd44-c7b5-6af6-8054-e8e93761fc9c",
         "imageUrl": "https://dkdtdevops.visualstudio.com/_api/_common/identityImage?id=6582fd44-c7b5-6af6-8054-e8e93761fc9c"
     },
-    "modifiedOn": "2017-09-30T11:44:20.953Z",
+    "modifiedOn": "2017-09-30T12:11:49.850Z",
     "path": "\\",
     "variables": {
         "dynBaseLanguage": {
@@ -144,7 +144,7 @@
                             "timeoutInMinutes": 0,
                             "definitionType": "task",
                             "overrideInputs": {},
-                            "condition": "and(succeeded(), eq(variables['resetDynamics'], 'Yes'))",
+                            "condition": "succeeded()",
                             "inputs": {
                                 "scriptType": "inlineScript",
                                 "scriptName": "",
