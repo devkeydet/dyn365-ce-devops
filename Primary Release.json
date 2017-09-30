@@ -1,7 +1,7 @@
 {
     "source": 2,
     "id": 2,
-    "revision": 3,
+    "revision": 8,
     "name": "Primary Release",
     "description": null,
     "createdBy": {
@@ -19,7 +19,7 @@
         "url": "https://app.vssps.visualstudio.com/A23c752fb-0c7e-40ce-b5fc-276e6094b415/_apis/Identities/6582fd44-c7b5-6af6-8054-e8e93761fc9c",
         "imageUrl": "https://dkdtdevops.visualstudio.com/_api/_common/identityImage?id=6582fd44-c7b5-6af6-8054-e8e93761fc9c"
     },
-    "modifiedOn": "2017-09-29T21:29:40.483Z",
+    "modifiedOn": "2017-09-30T11:44:20.953Z",
     "path": "\\",
     "variables": {
         "dynBaseLanguage": {
@@ -74,14 +74,11 @@
                     "value": "youruser"
                 },
                 "idaClientId": {
-                    "value": "c10e7929-a96e-4013-92fc-d954c8da09a1"
+                    "value": "yourclientid"
                 },
                 "password": {
                     "value": null,
                     "isSecret": true
-                },
-                "resetDynamics": {
-                    "value": "Yes"
                 },
                 "resourceGroup": {
                     "value": "your-rg"
@@ -222,7 +219,7 @@
                                 "csmFile": "$(System.DefaultWorkingDirectory)/Primary Build/drop/AzureResources/azuredeploy.json",
                                 "csmParametersFile": "$(System.DefaultWorkingDirectory)/Primary Build/drop/AzureResources/azuredeploy.parameters.json",
                                 "overrideParameters": "-uniqueName $(uniqueName)",
-                                "deploymentMode": "Complete",
+                                "deploymentMode": "Incremental",
                                 "enableDeploymentPrerequisites": "None",
                                 "deploymentGroupEndpoint": "",
                                 "project": "",
