@@ -177,7 +177,7 @@
                                 "scriptName": "",
                                 "arguments": "",
                                 "workingFolder": "$(System.DefaultWorkingDirectory)/Primary Build/drop",
-                                "inlineScript": "$url = \"https://raw.githubusercontent.com/devkeydet/dyn365-ce-mgmt-api-devops-scripts/1.5/RegisterAzureADApp.ps1\"\n$output = \"RegisterAzureADApp.ps1\"\nInvoke-WebRequest -Uri $url -OutFile $output",
+                                "inlineScript": "$url = \"https://raw.githubusercontent.com/devkeydet/dyn365-ce-mgmt-api-devops-scripts/1.6/RegisterAzureADApp.ps1\"\n$output = \"RegisterAzureADApp.ps1\"\nInvoke-WebRequest -Uri $url -OutFile $output",
                                 "failOnStandardError": "true"
                             }
                         },
