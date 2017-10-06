@@ -66,7 +66,7 @@
                     "isSecret": true
                 },
                 "dynSecureConfig": {
-                    "value": "\"[['0d392320-e6b5-e611-80f3-c4346bac2908','$(NamespaceConnectionString);EntityPath=crmqueue']]\""
+                    "value": "\"[['secure-config-entity-guid','some-secure-config-value']]\""
                 },
                 "dynServiceVersionId": {
                     "value": "31cafafe-c6b1-4c0a-bb53-73927841bc5c"
