@@ -16,7 +16,7 @@ The reference build definition in this repository (Primary Build.json) shows how
     * .NET dlls
     * etc.
 
-The refernce release definitions show how to deploy assets from the build to the target environment(s).  Each does the following:
+The reference release definitions show how to deploy assets from the build to the target environment(s).  Each does the following:
 * Primary Release - Dynamics Only.json
     * Resets a Dynamics 365 instance by using the [Online Management API for Dynamics 365 Customer Engagement](https://docs.microsoft.com/en-us/dynamics365/customer-engagement/developer/online-management-api)
     * Deploys the Dynamics 365 package and sample data using [Package Deployer](https://msdn.microsoft.com/en-us/library/dn688182.aspx)
