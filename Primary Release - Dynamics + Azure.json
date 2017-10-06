@@ -205,7 +205,7 @@
                         {
                             "taskId": "e213ff0f-5d5c-4791-802d-52ea3e7be1f1",
                             "version": "1.*",
-                            "name": "Install-Module Microsoft.Xrm.OnlineManagementAPI copy",
+                            "name": "Install-Module Microsoft.Xrm.OnlineManagementAPI",
                             "refName": "ClonedPowerShell11",
                             "enabled": true,
                             "alwaysRun": false,
@@ -226,7 +226,7 @@
                         {
                             "taskId": "e213ff0f-5d5c-4791-802d-52ea3e7be1f1",
                             "version": "1.*",
-                            "name": "Download Reset Dynamics 365 Instance Script copy",
+                            "name": "Download Reset Dynamics 365 Instance Script",
                             "refName": "ClonedPowerShell22",
                             "enabled": true,
                             "alwaysRun": false,
@@ -247,7 +247,7 @@
                         {
                             "taskId": "e213ff0f-5d5c-4791-802d-52ea3e7be1f1",
                             "version": "1.*",
-                            "name": "Reset Dynamics 365 Instance copy",
+                            "name": "Reset Dynamics 365 Instance",
                             "refName": "ClonedPowerShell13",
                             "enabled": true,
                             "alwaysRun": false,
