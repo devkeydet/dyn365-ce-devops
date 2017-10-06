@@ -1,8 +1,8 @@
 {
     "source": 2,
-    "id": 2,
-    "revision": 34,
-    "name": "Primary Release",
+    "id": 3,
+    "revision": 3,
+    "name": "Primary Release - Dynamics Only",
     "description": null,
     "createdBy": {
         "id": "6582fd44-c7b5-6af6-8054-e8e93761fc9c",
@@ -11,7 +11,7 @@
         "url": "https://app.vssps.visualstudio.com/A23c752fb-0c7e-40ce-b5fc-276e6094b415/_apis/Identities/6582fd44-c7b5-6af6-8054-e8e93761fc9c",
         "imageUrl": "https://dkdtdevops.visualstudio.com/_api/_common/identityImage?id=6582fd44-c7b5-6af6-8054-e8e93761fc9c"
     },
-    "createdOn": "2017-09-29T21:28:12.420Z",
+    "createdOn": "2017-10-06T15:54:08.257Z",
     "modifiedBy": {
         "id": "6582fd44-c7b5-6af6-8054-e8e93761fc9c",
         "displayName": "Marc Schweigert",
@@ -19,12 +19,9 @@
         "url": "https://app.vssps.visualstudio.com/A23c752fb-0c7e-40ce-b5fc-276e6094b415/_apis/Identities/6582fd44-c7b5-6af6-8054-e8e93761fc9c",
         "imageUrl": "https://dkdtdevops.visualstudio.com/_api/_common/identityImage?id=6582fd44-c7b5-6af6-8054-e8e93761fc9c"
     },
-    "modifiedOn": "2017-10-06T15:29:46.363Z",
+    "modifiedOn": "2017-10-06T15:55:40.227Z",
     "path": "\\",
     "variables": {
-        "aadInstanceUrl": {
-            "value": "https://login.microsoftonline.com/{0}"
-        },
         "dynBaseLanguage": {
             "value": "1033"
         },
@@ -47,7 +44,7 @@
     "variableGroups": [],
     "environments": [
         {
-            "id": 2,
+            "id": 3,
             "name": "myenvironment",
             "rank": 1,
             "owner": {
@@ -58,21 +55,6 @@
                 "imageUrl": "https://dkdtdevops.visualstudio.com/_api/_common/identityImage?id=6582fd44-c7b5-6af6-8054-e8e93761fc9c"
             },
             "variables": {
-                "aadAppName": {
-                    "value": "your-aad-app-to-register"
-                },
-                "aadClientId": {
-                    "value": "temp-will-be-replaced-in-task"
-                },
-                "aadTenant": {
-                    "value": "$(dynTenant)"
-                },
-                "azResourceGroup": {
-                    "value": "your-rg"
-                },
-                "azUniqueName": {
-                    "value": "youruniquename"
-                },
                 "dynDomain": {
                     "value": "yourdyndomain"
                 },
@@ -102,13 +84,13 @@
                         "rank": 1,
                         "isAutomated": true,
                         "isNotificationOn": false,
-                        "id": 4
+                        "id": 7
                     }
                 ]
             },
             "deployStep": {
                 "tasks": [],
-                "id": 5
+                "id": 8
             },
             "postDeployApprovals": {
                 "approvals": [
@@ -116,7 +98,7 @@
                         "rank": 1,
                         "isAutomated": true,
                         "isNotificationOn": false,
-                        "id": 6
+                        "id": 9
                     }
                 ]
             },
@@ -139,69 +121,6 @@
                     "phaseType": 1,
                     "name": "Agent phase",
                     "workflowTasks": [
-                        {
-                            "taskId": "e213ff0f-5d5c-4791-802d-52ea3e7be1f1",
-                            "version": "1.*",
-                            "name": "Install-Module AzureAD",
-                            "refName": "PowerShell1",
-                            "enabled": true,
-                            "alwaysRun": false,
-                            "continueOnError": false,
-                            "timeoutInMinutes": 0,
-                            "definitionType": "task",
-                            "overrideInputs": {},
-                            "condition": "succeeded()",
-                            "inputs": {
-                                "scriptType": "inlineScript",
-                                "scriptName": "",
-                                "arguments": "",
-                                "workingFolder": "",
-                                "inlineScript": "Install-Module AzureAD -Force -Scope CurrentUser",
-                                "failOnStandardError": "true"
-                            }
-                        },
-                        {
-                            "taskId": "e213ff0f-5d5c-4791-802d-52ea3e7be1f1",
-                            "version": "1.*",
-                            "name": "Download Register Azure AD App Script",
-                            "refName": "PowerShell2",
-                            "enabled": true,
-                            "alwaysRun": false,
-                            "continueOnError": false,
-                            "timeoutInMinutes": 0,
-                            "definitionType": "task",
-                            "overrideInputs": {},
-                            "condition": "succeeded()",
-                            "inputs": {
-                                "scriptType": "inlineScript",
-                                "scriptName": "",
-                                "arguments": "",
-                                "workingFolder": "$(System.DefaultWorkingDirectory)/Primary Build/drop",
-                                "inlineScript": "$url = \"https://raw.githubusercontent.com/devkeydet/dyn365-ce-mgmt-api-devops-scripts/1.4/RegisterAzureADApp.ps1\"\n$output = \"RegisterAzureADApp.ps1\"\nInvoke-WebRequest -Uri $url -OutFile $output",
-                                "failOnStandardError": "true"
-                            }
-                        },
-                        {
-                            "taskId": "e213ff0f-5d5c-4791-802d-52ea3e7be1f1",
-                            "version": "1.*",
-                            "name": "Register Azure AD App",
-                            "refName": "PowerShell1",
-                            "enabled": true,
-                            "alwaysRun": false,
-                            "continueOnError": false,
-                            "timeoutInMinutes": 0,
-                            "definitionType": "task",
-                            "overrideInputs": {},
-                            "condition": "succeeded()",
-                            "inputs": {
-                                "scriptType": "filePath",
-                                "scriptName": "$(System.DefaultWorkingDirectory)/Primary Build/drop/RegisterAzureADApp.ps1",
-                                "arguments": "-DisplayName $(aadAppName) -UserName \"$(dynUserName)\" -Password \"$(dynPassword)\"",
-                                "workingFolder": "",
-                                "inlineScript": "# You can write your powershell scripts inline here. \n# You can also pass predefined and custom variables to this scripts using arguments\n\n Write-Host \"Hello World\"",
-                                "failOnStandardError": "true"
-                            }
-                        },
                         {
                             "taskId": "e213ff0f-5d5c-4791-802d-52ea3e7be1f1",
                             "version": "1.*",
@@ -263,124 +182,6 @@
                                 "workingFolder": "",
                                 "inlineScript": "# You can write your powershell scripts inline here. \n# You can also pass predefined and custom variables to this scripts using arguments\n\n Write-Host \"Hello World\"",
                                 "failOnStandardError": "true"
-                            }
-                        },
-                        {
-                            "taskId": "94a74903-f93f-4075-884f-dc11f34058b4",
-                            "version": "2.*",
-                            "name": "Create Or Update Azure Resource Group",
-                            "refName": "AzureResourceGroupDeployment1",
-                            "enabled": true,
-                            "alwaysRun": false,
-                            "continueOnError": false,
-                            "timeoutInMinutes": 0,
-                            "definitionType": "task",
-                            "overrideInputs": {},
-                            "condition": "succeeded()",
-                            "inputs": {
-                                "ConnectedServiceName": "53f99e97-5c92-458f-9e70-6b3896c286c8",
-                                "action": "Create Or Update Resource Group",
-                                "resourceGroupName": "$(azResourceGroup)",
-                                "location": "East US",
-                                "templateLocation": "Linked artifact",
-                                "csmFileLink": "",
-                                "csmParametersFileLink": "",
-                                "csmFile": "$(System.DefaultWorkingDirectory)/Primary Build/drop/AzureResources/azuredeploy.json",
-                                "csmParametersFile": "$(System.DefaultWorkingDirectory)/Primary Build/drop/AzureResources/azuredeploy.parameters.json",
-                                "overrideParameters": "-uniqueName $(azUniqueName)",
-                                "deploymentMode": "Incremental",
-                                "enableDeploymentPrerequisites": "None",
-                                "deploymentGroupEndpoint": "",
-                                "project": "",
-                                "deploymentGroupName": "",
-                                "copyAzureVMTags": "true",
-                                "outputVariable": ""
-                            }
-                        },
-                        {
-                            "taskId": "584bcff2-3353-4f11-872b-6ba01267a972",
-                            "version": "1.*",
-                            "name": "Get Outputs from ARM Template",
-                            "refName": "ARMOutputs1",
-                            "enabled": true,
-                            "alwaysRun": false,
-                            "continueOnError": false,
-                            "timeoutInMinutes": 0,
-                            "definitionType": "task",
-                            "overrideInputs": {},
-                            "condition": "succeeded()",
-                            "inputs": {
-                                "ConnectedServiceNameSelector": "ConnectedServiceNameARM",
-                                "ConnectedServiceNameARM": "53f99e97-5c92-458f-9e70-6b3896c286c8",
-                                "resourceGroupName": "$(azResourceGroup)",
-                                "prefix": "",
-                                "outputNames": ""
-                            }
-                        },
-                        {
-                            "taskId": "497d490f-eea7-4f2b-ab94-48d9c1acdcb1",
-                            "version": "3.*",
-                            "name": "Deploy Azure Logic App ",
-                            "refName": "AzureRmWebAppDeployment1",
-                            "enabled": true,
-                            "alwaysRun": false,
-                            "continueOnError": false,
-                            "timeoutInMinutes": 0,
-                            "definitionType": "task",
-                            "overrideInputs": {},
-                            "condition": "succeeded()",
-                            "inputs": {
-                                "ConnectedServiceName": "53f99e97-5c92-458f-9e70-6b3896c286c8",
-                                "WebAppName": "$(azUniqueName)",
-                                "WebAppKind": "app",
-                                "DeployToSlotFlag": "false",
-                                "ResourceGroupName": "",
-                                "SlotName": "",
-                                "ImageSource": "Registry",
-                                "DockerNamespace": "",
-                                "DockerRepository": "",
-                                "DockerImageTag": "",
-                                "VirtualApplication": "",
-                                "Package": "$(System.DefaultWorkingDirectory)/Primary Build/drop/AzureFunctionApp/bin/Release/net461",
-                                "BuiltinLinuxPackage": "$(System.DefaultWorkingDirectory)/**/*.zip",
-                                "RuntimeStack": "node|4.4",
-                                "StartupCommand": "",
-                                "WebAppUri": "",
-                                "ScriptType": "",
-                                "InlineScript": ":: You can provide your deployment commands here. One command per line.",
-                                "ScriptPath": "",
-                                "GenerateWebConfig": "false",
-                                "WebConfigParameters": "",
-                                "AppSettings": "",
-                                "TakeAppOfflineFlag": "false",
-                                "UseWebDeploy": "false",
-                                "SetParametersFile": "",
-                                "RemoveAdditionalFilesFlag": "false",
-                                "ExcludeFilesFromAppDataFlag": "false",
-                                "AdditionalArguments": "",
-                                "RenameFilesFlag": "false",
-                                "XmlTransformation": "false",
-                                "XmlVariableSubstitution": "false",
-                                "JSONFiles": ""
-                            }
-                        },
-                        {
-                            "taskId": "9d2e4cf0-f3bb-11e6-978b-770d284f4f2d",
-                            "version": "1.*",
-                            "name": "Configure Azure Logic App Settings",
-                            "refName": "AzureAppServiceSetAppSettings1",
-                            "enabled": true,
-                            "alwaysRun": false,
-                            "continueOnError": false,
-                            "timeoutInMinutes": 0,
-                            "definitionType": "task",
-                            "overrideInputs": {},
-                            "condition": "succeeded()",
-                            "inputs": {
-                                "ConnectedServiceName": "53f99e97-5c92-458f-9e70-6b3896c286c8",
-                                "WebAppName": "$(azUniqueName)",
-                                "ResourceGroupName": "$(azResourceGroup)",
-                                "AppSettings": "sbconn='$(NamespaceConnectionString)'\nida:AADInstance='$(aadInstanceUrl)'\nida:Tenant='$(aadTenant)'\nida:ClientId='$(aadClientId)'\nuser='$(dynUserName)'\npassword='$(dynPassword)'\ncrmInstanceUrl='$(dynUrl)'\ncrmWebApiVersion='8.2'"
                             }
                         },
                         {
@@ -526,14 +327,14 @@
         }
     ],
     "triggers": [],
-    "releaseNameFormat": "Primary Release $(Build.BuildNumber)-$(Date:hhmmss)",
-    "url": "https://dkdtdevops.vsrm.visualstudio.com/7895651c-7f1a-466c-aa8f-0352510e6c2c/_apis/Release/definitions/2",
+    "releaseNameFormat": "Primary Release - Dynamics Only $(Build.BuildNumber)-$(Date:hhmmss)",
+    "url": "https://dkdtdevops.vsrm.visualstudio.com/7895651c-7f1a-466c-aa8f-0352510e6c2c/_apis/Release/definitions/3",
     "_links": {
         "self": {
-            "href": "https://dkdtdevops.vsrm.visualstudio.com/7895651c-7f1a-466c-aa8f-0352510e6c2c/_apis/Release/definitions/2"
+            "href": "https://dkdtdevops.vsrm.visualstudio.com/7895651c-7f1a-466c-aa8f-0352510e6c2c/_apis/Release/definitions/3"
         },
         "web": {
-            "href": "https://dkdtdevops.visualstudio.com/7895651c-7f1a-466c-aa8f-0352510e6c2c/_release?definitionId=2"
+            "href": "https://dkdtdevops.visualstudio.com/7895651c-7f1a-466c-aa8f-0352510e6c2c/_release?definitionId=3"
         }
     },
     "tags": [],
