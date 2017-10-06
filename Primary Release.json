@@ -1,7 +1,7 @@
 {
     "source": 2,
     "id": 2,
-    "revision": 33,
+    "revision": 34,
     "name": "Primary Release",
     "description": null,
     "createdBy": {
@@ -19,7 +19,7 @@
         "url": "https://app.vssps.visualstudio.com/A23c752fb-0c7e-40ce-b5fc-276e6094b415/_apis/Identities/6582fd44-c7b5-6af6-8054-e8e93761fc9c",
         "imageUrl": "https://dkdtdevops.visualstudio.com/_api/_common/identityImage?id=6582fd44-c7b5-6af6-8054-e8e93761fc9c"
     },
-    "modifiedOn": "2017-10-06T15:08:49.693Z",
+    "modifiedOn": "2017-10-06T15:29:46.363Z",
     "path": "\\",
     "variables": {
         "aadInstanceUrl": {
@@ -59,7 +59,7 @@
             },
             "variables": {
                 "aadAppName": {
-                    "value": "your AAD app to register"
+                    "value": "your-aad-app-to-register"
                 },
                 "aadClientId": {
                     "value": "temp-will-be-replaced-in-task"
@@ -205,30 +205,9 @@
                         {
                             "taskId": "e213ff0f-5d5c-4791-802d-52ea3e7be1f1",
                             "version": "1.*",
-                            "name": "PowerShell Script",
-                            "refName": "PowerShell4",
-                            "enabled": true,
-                            "alwaysRun": false,
-                            "continueOnError": false,
-                            "timeoutInMinutes": 0,
-                            "definitionType": "task",
-                            "overrideInputs": {},
-                            "condition": "succeeded()",
-                            "inputs": {
-                                "scriptType": "inlineScript",
-                                "scriptName": "",
-                                "arguments": "",
-                                "workingFolder": "",
-                                "inlineScript": "Write-Host $env:aadClientId",
-                                "failOnStandardError": "true"
-                            }
-                        },
-                        {
-                            "taskId": "e213ff0f-5d5c-4791-802d-52ea3e7be1f1",
-                            "version": "1.*",
                             "name": "Install-Module Microsoft.Xrm.OnlineManagementAPI copy",
                             "refName": "ClonedPowerShell11",
-                            "enabled": false,
+                            "enabled": true,
                             "alwaysRun": false,
                             "continueOnError": false,
                             "timeoutInMinutes": 0,
@@ -249,7 +228,7 @@
                             "version": "1.*",
                             "name": "Download Reset Dynamics 365 Instance Script copy",
                             "refName": "ClonedPowerShell22",
-                            "enabled": false,
+                            "enabled": true,
                             "alwaysRun": false,
                             "continueOnError": false,
                             "timeoutInMinutes": 0,
@@ -270,7 +249,7 @@
                             "version": "1.*",
                             "name": "Reset Dynamics 365 Instance copy",
                             "refName": "ClonedPowerShell13",
-                            "enabled": false,
+                            "enabled": true,
                             "alwaysRun": false,
                             "continueOnError": false,
                             "timeoutInMinutes": 0,
@@ -291,7 +270,7 @@
                             "version": "2.*",
                             "name": "Create Or Update Azure Resource Group",
                             "refName": "AzureResourceGroupDeployment1",
-                            "enabled": false,
+                            "enabled": true,
                             "alwaysRun": false,
                             "continueOnError": false,
                             "timeoutInMinutes": 0,
@@ -323,7 +302,7 @@
                             "version": "1.*",
                             "name": "Get Outputs from ARM Template",
                             "refName": "ARMOutputs1",
-                            "enabled": false,
+                            "enabled": true,
                             "alwaysRun": false,
                             "continueOnError": false,
                             "timeoutInMinutes": 0,
@@ -343,7 +322,7 @@
                             "version": "3.*",
                             "name": "Deploy Azure Logic App ",
                             "refName": "AzureRmWebAppDeployment1",
-                            "enabled": false,
+                            "enabled": true,
                             "alwaysRun": false,
                             "continueOnError": false,
                             "timeoutInMinutes": 0,
@@ -390,7 +369,7 @@
                             "version": "1.*",
                             "name": "Configure Azure Logic App Settings",
                             "refName": "AzureAppServiceSetAppSettings1",
-                            "enabled": false,
+                            "enabled": true,
                             "alwaysRun": false,
                             "continueOnError": false,
                             "timeoutInMinutes": 0,
@@ -409,7 +388,7 @@
                             "version": "8.*",
                             "name": "Deploy Dynamics 365 Package and Data using Package Deployer",
                             "refName": "MSCRMPackageDeployer1",
-                            "enabled": false,
+                            "enabled": true,
                             "alwaysRun": false,
                             "continueOnError": false,
                             "timeoutInMinutes": 0,
@@ -427,7 +406,7 @@
                             "version": "1.*",
                             "name": "Download UpdateSecureConfiguration.exe Utility",
                             "refName": "PowerShell1",
-                            "enabled": false,
+                            "enabled": true,
                             "alwaysRun": false,
                             "continueOnError": false,
                             "timeoutInMinutes": 0,
@@ -448,7 +427,7 @@
                             "version": "1.*",
                             "name": "Extract UpdateSecureConfiguration_1.0.0.0.zip",
                             "refName": "ExtractFiles2",
-                            "enabled": false,
+                            "enabled": true,
                             "alwaysRun": false,
                             "continueOnError": false,
                             "timeoutInMinutes": 0,
@@ -466,7 +445,7 @@
                             "version": "1.*",
                             "name": "Run UpdateSecureConfiguration.exe",
                             "refName": "BatchScript1",
-                            "enabled": false,
+                            "enabled": true,
                             "alwaysRun": false,
                             "continueOnError": false,
                             "timeoutInMinutes": 0,
