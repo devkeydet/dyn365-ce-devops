@@ -19,7 +19,7 @@ The reference build definition in this repository ([Primary Build.json](https://
         * Packages Dynamics 365 configuration xml files using [Solution Packager](https://msdn.microsoft.com/en-us/library/jj602987.aspx)
     * Starter data import zip files
         * Zips up xml files produced by the [Configuration Migration](https://technet.microsoft.com/library/dn647421.aspx) tool to setup sample data
-    * .NET dlls for both CRM and an [Azure Function App](https://azure.microsoft.com/en-us/services/functions/)
+    * .NET dlls for both Dynamics 365 and an [Azure Function App](https://azure.microsoft.com/en-us/services/functions/)
     * etc.
 
 The reference release definitions show how to deploy assets from the build to the target environment(s).  Each does the following:
