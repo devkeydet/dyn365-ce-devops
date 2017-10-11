@@ -45,4 +45,4 @@ Please watch the following videos to help you understand how to get started:
 
 *Part II* - This video assumes you watched *Part I*.  It builds on *Part I*, with a goal of helping you understand how to import and execute [Primary Release - Dynamics + Azure.json](https://github.com/devkeydet/dyn365-ce-devops/blob/master/Primary%20Release%20-%20Dynamics%20%2B%20Azure.json), which includes a more elaborate example, including provisioning, deploying and configuring Azure services and code that work as part of the overall application.
 
-[TODO: Record and embed YouTube video]
+[![Video walkthrough part two](https://img.youtube.com/vi/hlAEMr4xlCY/0.jpg)](https://www.youtube.com/watch?v=hlAEMr4xlCY)
