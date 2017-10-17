@@ -1,7 +1,7 @@
 {
     "source": 2,
     "id": 2,
-    "revision": 36,
+    "revision": 39,
     "name": "Primary Release - Dynamics + Azure",
     "description": null,
     "createdBy": {
@@ -19,7 +19,7 @@
         "url": "https://app.vssps.visualstudio.com/A23c752fb-0c7e-40ce-b5fc-276e6094b415/_apis/Identities/6582fd44-c7b5-6af6-8054-e8e93761fc9c",
         "imageUrl": "https://dkdtdevops.visualstudio.com/_api/_common/identityImage?id=6582fd44-c7b5-6af6-8054-e8e93761fc9c"
     },
-    "modifiedOn": "2017-10-06T15:57:02.057Z",
+    "modifiedOn": "2017-10-17T00:09:20.330Z",
     "path": "\\",
     "variables": {
         "aadInstanceUrl": {
@@ -177,7 +177,7 @@
                                 "scriptName": "",
                                 "arguments": "",
                                 "workingFolder": "$(System.DefaultWorkingDirectory)/Primary Build/drop",
-                                "inlineScript": "$url = \"https://raw.githubusercontent.com/devkeydet/dyn365-ce-mgmt-api-devops-scripts/1.6/RegisterAzureADApp.ps1\"\n$output = \"RegisterAzureADApp.ps1\"\nInvoke-WebRequest -Uri $url -OutFile $output",
+                                "inlineScript": "$url = \"https://raw.githubusercontent.com/devkeydet/dyn365-ce-mgmt-api-devops-scripts/1.5/RegisterAzureADApp.ps1\"\n$output = \"RegisterAzureADApp.ps1\"\nInvoke-WebRequest -Uri $url -OutFile $output",
                                 "failOnStandardError": "true"
                             }
                         },
@@ -320,7 +320,7 @@
                         {
                             "taskId": "497d490f-eea7-4f2b-ab94-48d9c1acdcb1",
                             "version": "3.*",
-                            "name": "Deploy Azure Logic App ",
+                            "name": "Deploy Azure Function App ",
                             "refName": "AzureRmWebAppDeployment1",
                             "enabled": true,
                             "alwaysRun": false,
@@ -334,9 +334,17 @@
                                 "WebAppName": "$(azUniqueName)",
                                 "WebAppKind": "app",
                                 "DeployToSlotFlag": "false",
+                                "ImageSource": "Registry",
                                 "ResourceGroupName": "",
                                 "SlotName": "",
-                                "ImageSource": "Registry",
+                                "AzureContainerRegistry": "",
+                                "AzureContainerRegistryLoginServer": "",
+                                "AzureContainerRegistryImage": "",
+                                "AzureContainerRegistryTag": "",
+                                "DockerRepositoryAccess": "public",
+                                "RegistryConnectedServiceName": "",
+                                "PrivateRegistryImage": "",
+                                "PrivateRegistryTag": "",
                                 "DockerNamespace": "",
                                 "DockerRepository": "",
                                 "DockerImageTag": "",

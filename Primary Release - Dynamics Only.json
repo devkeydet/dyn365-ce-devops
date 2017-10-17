@@ -1,7 +1,7 @@
 {
     "source": 2,
     "id": 3,
-    "revision": 3,
+    "revision": 4,
     "name": "Primary Release - Dynamics Only",
     "description": null,
     "createdBy": {
@@ -19,7 +19,7 @@
         "url": "https://app.vssps.visualstudio.com/A23c752fb-0c7e-40ce-b5fc-276e6094b415/_apis/Identities/6582fd44-c7b5-6af6-8054-e8e93761fc9c",
         "imageUrl": "https://dkdtdevops.visualstudio.com/_api/_common/identityImage?id=6582fd44-c7b5-6af6-8054-e8e93761fc9c"
     },
-    "modifiedOn": "2017-10-06T15:55:40.227Z",
+    "modifiedOn": "2017-10-17T00:08:17.440Z",
     "path": "\\",
     "variables": {
         "dynBaseLanguage": {
