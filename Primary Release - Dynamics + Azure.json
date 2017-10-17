@@ -1,7 +1,7 @@
 {
     "source": 2,
     "id": 2,
-    "revision": 39,
+    "revision": 41,
     "name": "Primary Release - Dynamics + Azure",
     "description": null,
     "createdBy": {
@@ -19,7 +19,7 @@
         "url": "https://app.vssps.visualstudio.com/A23c752fb-0c7e-40ce-b5fc-276e6094b415/_apis/Identities/6582fd44-c7b5-6af6-8054-e8e93761fc9c",
         "imageUrl": "https://dkdtdevops.visualstudio.com/_api/_common/identityImage?id=6582fd44-c7b5-6af6-8054-e8e93761fc9c"
     },
-    "modifiedOn": "2017-10-17T00:09:20.330Z",
+    "modifiedOn": "2017-10-17T01:22:48.040Z",
     "path": "\\",
     "variables": {
         "aadInstanceUrl": {
@@ -59,7 +59,7 @@
             },
             "variables": {
                 "aadAppName": {
-                    "value": "your-aad-app-to-register"
+                    "value": "your-aad-app-name-to-register"
                 },
                 "aadClientId": {
                     "value": "temp-will-be-replaced-in-task"
@@ -200,6 +200,54 @@
                                 "workingFolder": "",
                                 "inlineScript": "# You can write your powershell scripts inline here. \n# You can also pass predefined and custom variables to this scripts using arguments\n\n Write-Host \"Hello World\"",
                                 "failOnStandardError": "true"
+                            }
+                        },
+                        {
+                            "taskId": "e213ff0f-5d5c-4791-802d-52ea3e7be1f1",
+                            "version": "1.*",
+                            "name": "Set dateTimeStamp variable",
+                            "refName": "PowerShell1",
+                            "enabled": true,
+                            "alwaysRun": false,
+                            "continueOnError": false,
+                            "timeoutInMinutes": 0,
+                            "definitionType": "task",
+                            "overrideInputs": {},
+                            "condition": "succeeded()",
+                            "inputs": {
+                                "scriptType": "inlineScript",
+                                "scriptName": "",
+                                "arguments": "",
+                                "workingFolder": "",
+                                "inlineScript": "$env:dateTimeStamp = Get-Date -format 'u'",
+                                "failOnStandardError": "true"
+                            }
+                        },
+                        {
+                            "taskId": "0c3e661c-d316-443e-9a77-470989da8e29",
+                            "version": "8.*",
+                            "name": "Backup Dynamics 365 Instance",
+                            "refName": "MSCRMBackupOnlineInstance2",
+                            "enabled": true,
+                            "alwaysRun": false,
+                            "continueOnError": false,
+                            "timeoutInMinutes": 0,
+                            "definitionType": "task",
+                            "overrideInputs": {},
+                            "condition": "succeeded()",
+                            "inputs": {
+                                "apiUrl": "https://admin.services.crm.dynamics.com",
+                                "username": "$(dynUserName)",
+                                "Password": "$(dynPassword)",
+                                "instanceName": "$(dynDomain)",
+                                "backupLabel": "vsts initiated backup - $(dateTimeStamp)",
+                                "notes": "",
+                                "isAzureBackup": "false",
+                                "containerName": "",
+                                "storageAccountKey": "",
+                                "storageAccountName": "",
+                                "waitForCompletion": "true",
+                                "sleepDuration": "5"
                             }
                         },
                         {
