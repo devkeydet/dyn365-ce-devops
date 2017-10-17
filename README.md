@@ -1,3 +1,4 @@
+
 # Introduction
 The purpose of this project is to provide reference examples of using [Visual Studio Team Service (VSTS)](https://www.visualstudio.com/team-services/) to build and deploy Dynamics 365 based applications.  The reference examples are based on various use cases, including:
 
@@ -41,6 +42,7 @@ The reference release definitions show how to deploy assets from the build to th
 Please watch the following videos to help you understand how to get started:
 
 *Part I* - This video walks through [Primary Build.json](https://github.com/devkeydet/dyn365-ce-devops/blob/master/Primary%20Build.json) and [Primary Release - Dynamics Only.json](https://github.com/devkeydet/dyn365-ce-devops/blob/master/Primary%20Release%20-%20Dynamics%20Only.json), with a goal of helping you understand how they work and how to import them into your own VSTS project.
+
 [![Video walkthrough part one](https://img.youtube.com/vi/O_q3cSWAUVI/0.jpg)](https://www.youtube.com/watch?v=O_q3cSWAUVI)
 
 *Part II* - This video assumes you watched *Part I*.  It builds on *Part I*, with a goal of helping you understand how to import and execute [Primary Release - Dynamics + Azure.json](https://github.com/devkeydet/dyn365-ce-devops/blob/master/Primary%20Release%20-%20Dynamics%20%2B%20Azure.json), which includes a more elaborate example, including provisioning, deploying and configuring Azure services and code that work as part of the overall application.
