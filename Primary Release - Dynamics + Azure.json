@@ -230,7 +230,7 @@
                             "overrideInputs": {},
                             "condition": "succeeded()",
                             "inputs": {
-                                "apiUrl": "https://admin.services.crm.dynamics.com",
+                                "apiUrl": "$(dynMgmtApiUrl)",
                                 "username": "$(dynUserName)",
                                 "Password": "$(dynPassword)",
                                 "instanceName": "$(dynDomain)",
