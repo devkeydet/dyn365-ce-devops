@@ -1,7 +1,7 @@
 {
     "source": 2,
     "id": 2,
-    "revision": 41,
+    "revision": 44,
     "name": "Primary Release - Dynamics + Azure",
     "description": null,
     "createdBy": {
@@ -19,7 +19,7 @@
         "url": "https://app.vssps.visualstudio.com/A23c752fb-0c7e-40ce-b5fc-276e6094b415/_apis/Identities/6582fd44-c7b5-6af6-8054-e8e93761fc9c",
         "imageUrl": "https://dkdtdevops.visualstudio.com/_api/_common/identityImage?id=6582fd44-c7b5-6af6-8054-e8e93761fc9c"
     },
-    "modifiedOn": "2017-10-17T01:22:48.040Z",
+    "modifiedOn": "2017-10-17T02:10:59.413Z",
     "path": "\\",
     "variables": {
         "aadInstanceUrl": {
@@ -61,9 +61,6 @@
                 "aadAppName": {
                     "value": "your-aad-app-name-to-register"
                 },
-                "aadClientId": {
-                    "value": "temp-will-be-replaced-in-task"
-                },
                 "aadTenant": {
                     "value": "$(dynTenant)"
                 },
@@ -82,9 +79,6 @@
                 "dynPassword": {
                     "value": null,
                     "isSecret": true
-                },
-                "dynSecureConfig": {
-                    "value": "\"[['0d392320-e6b5-e611-80f3-c4346bac2908','$(NamespaceConnectionString);EntityPath=crmqueue']]\""
                 },
                 "dynServiceVersionId": {
                     "value": "31cafafe-c6b1-4c0a-bb53-73927841bc5c"
@@ -458,10 +452,10 @@
                             }
                         },
                         {
-                            "taskId": "e213ff0f-5d5c-4791-802d-52ea3e7be1f1",
-                            "version": "1.*",
-                            "name": "Download UpdateSecureConfiguration.exe Utility",
-                            "refName": "PowerShell1",
+                            "taskId": "a48748ef-a5d6-4af5-a9be-589847132134",
+                            "version": "8.*",
+                            "name": "Update Secure Configuration",
+                            "refName": "MSCRMUpdateSecureConfiguration1",
                             "enabled": true,
                             "alwaysRun": false,
                             "continueOnError": false,
@@ -470,50 +464,8 @@
                             "overrideInputs": {},
                             "condition": "succeeded()",
                             "inputs": {
-                                "scriptType": "inlineScript",
-                                "scriptName": "",
-                                "arguments": "",
-                                "workingFolder": "$(System.DefaultWorkingDirectory)/Primary Build/drop",
-                                "inlineScript": "# You can write your powershell scripts inline here. \n# You can also pass predefined and custom variables to this scripts using arguments\n\nWrite-Host \"Downloading UpdateSecureConfiguration.exe\"\n\n$url = \"https://github.com/devkeydet/UpdateSecureConfiguration/files/1296117/UpdateSecureConfiguration_1.0.0.0.zip\"\n$output = \"UpdateSecureConfiguration_1.0.0.0.zip\"\nInvoke-WebRequest -Uri $url -OutFile $output\n",
-                                "failOnStandardError": "true"
-                            }
-                        },
-                        {
-                            "taskId": "5e1e3830-fbfb-11e5-aab1-090c92bc4988",
-                            "version": "1.*",
-                            "name": "Extract UpdateSecureConfiguration_1.0.0.0.zip",
-                            "refName": "ExtractFiles2",
-                            "enabled": true,
-                            "alwaysRun": false,
-                            "continueOnError": false,
-                            "timeoutInMinutes": 0,
-                            "definitionType": "task",
-                            "overrideInputs": {},
-                            "condition": "succeeded()",
-                            "inputs": {
-                                "archiveFilePatterns": "$(System.DefaultWorkingDirectory)/Primary Build/drop/UpdateSecureConfiguration_1.0.0.0.zip",
-                                "destinationFolder": "$(System.DefaultWorkingDirectory)/Primary Build/drop",
-                                "cleanDestinationFolder": "false"
-                            }
-                        },
-                        {
-                            "taskId": "bfc8bf76-e7ac-4a8c-9a55-a944a9f632fd",
-                            "version": "1.*",
-                            "name": "Run UpdateSecureConfiguration.exe",
-                            "refName": "BatchScript1",
-                            "enabled": true,
-                            "alwaysRun": false,
-                            "continueOnError": false,
-                            "timeoutInMinutes": 0,
-                            "definitionType": "task",
-                            "overrideInputs": {},
-                            "condition": "succeeded()",
-                            "inputs": {
-                                "filename": "$(System.DefaultWorkingDirectory)/Primary Build/drop/UpdateSecureConfiguration.exe",
-                                "arguments": "\"$(dynConnectionString)\" \"$(dynSecureConfig)\"",
-                                "modifyEnvironment": "False",
-                                "workingFolder": "$(System.DefaultWorkingDirectory)/Primary CI Build/drop",
-                                "failOnStandardError": "false"
+                                "crmConnectionString": "$(dynConnectionString)",
+                                "secureConfiguration": "[\n['0d392320-e6b5-e611-80f3-c4346bac2908','$(NamespaceConnectionString);EntityPath=crmqueue']\n]"
                             }
                         }
                     ]
