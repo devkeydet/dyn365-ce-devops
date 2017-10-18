@@ -351,7 +351,7 @@
                         {
                             "taskId": "497d490f-eea7-4f2b-ab94-48d9c1acdcb1",
                             "version": "3.*",
-                            "name": "Deploy Azure Function App ",
+                            "name": "Deploy Azure Function App",
                             "refName": "AzureRmWebAppDeployment1",
                             "enabled": true,
                             "alwaysRun": false,
@@ -406,7 +406,7 @@
                         {
                             "taskId": "9d2e4cf0-f3bb-11e6-978b-770d284f4f2d",
                             "version": "1.*",
-                            "name": "Configure Azure Logic App Settings",
+                            "name": "Configure Azure Function App Settings",
                             "refName": "AzureAppServiceSetAppSettings1",
                             "enabled": true,
                             "alwaysRun": false,
