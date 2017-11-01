@@ -1,7 +1,7 @@
 {
     "source": 2,
     "id": 2,
-    "revision": 50,
+    "revision": 51,
     "name": "Primary Release - Dynamics + Azure",
     "description": null,
     "createdBy": {
@@ -19,7 +19,8 @@
         "url": "https://app.vssps.visualstudio.com/A23c752fb-0c7e-40ce-b5fc-276e6094b415/_apis/Identities/6582fd44-c7b5-6af6-8054-e8e93761fc9c",
         "imageUrl": "https://dkdtdevops.visualstudio.com/_api/_common/identityImage?id=6582fd44-c7b5-6af6-8054-e8e93761fc9c"
     },
-    "modifiedOn": "2017-10-18T00:30:41.900Z",
+    "modifiedOn": "2017-11-01T22:52:22.127Z",
+    "isDeleted": false,
     "path": "\\",
     "variables": {
         "aadInstanceUrl": {
@@ -115,6 +116,9 @@
                             "parallelExecutionType": "none"
                         },
                         "skipArtifactsDownload": false,
+                        "artifactsDownloadInput": {
+                            "downloadInputs": []
+                        },
                         "queueId": 4,
                         "demands": [],
                         "enableAccessToken": false,
@@ -188,54 +192,6 @@
                                 "workingFolder": "",
                                 "inlineScript": "# You can write your powershell scripts inline here. \n# You can also pass predefined and custom variables to this scripts using arguments\n\n Write-Host \"Hello World\"",
                                 "failOnStandardError": "true"
-                            }
-                        },
-                        {
-                            "taskId": "e213ff0f-5d5c-4791-802d-52ea3e7be1f1",
-                            "version": "1.*",
-                            "name": "Set dateTimeStamp variable",
-                            "refName": "PowerShell1",
-                            "enabled": true,
-                            "alwaysRun": false,
-                            "continueOnError": false,
-                            "timeoutInMinutes": 0,
-                            "definitionType": "task",
-                            "overrideInputs": {},
-                            "condition": "succeeded()",
-                            "inputs": {
-                                "scriptType": "inlineScript",
-                                "scriptName": "",
-                                "arguments": "",
-                                "workingFolder": "",
-                                "inlineScript": "# Set dateTimeStamp VSTS variable for use by backup instance label\n\n$env:dateTimeStamp = Get-Date -format 'u'\n\n# NOTE: There's an issue with backups using the current \"reset\" approach (delete/provision).  See: https://github.com/devkeydet/dyn365-ce-devops/issues/22",
-                                "failOnStandardError": "true"
-                            }
-                        },
-                        {
-                            "taskId": "0c3e661c-d316-443e-9a77-470989da8e29",
-                            "version": "8.*",
-                            "name": "Backup Dynamics 365 Instance",
-                            "refName": "MSCRMBackupOnlineInstance2",
-                            "enabled": true,
-                            "alwaysRun": false,
-                            "continueOnError": false,
-                            "timeoutInMinutes": 0,
-                            "definitionType": "task",
-                            "overrideInputs": {},
-                            "condition": "succeeded()",
-                            "inputs": {
-                                "apiUrl": "$(dynMgmtApiUrl)",
-                                "username": "$(dynUserName)",
-                                "Password": "$(dynPassword)",
-                                "instanceName": "$(dynDomain)",
-                                "backupLabel": "vsts initiated backup - $(dateTimeStamp)",
-                                "notes": "",
-                                "isAzureBackup": "false",
-                                "containerName": "",
-                                "storageAccountKey": "",
-                                "storageAccountName": "",
-                                "waitForCompletion": "true",
-                                "sleepDuration": "5"
                             }
                         },
                         {
@@ -351,7 +307,7 @@
                         {
                             "taskId": "497d490f-eea7-4f2b-ab94-48d9c1acdcb1",
                             "version": "3.*",
-                            "name": "Deploy Azure Function App",
+                            "name": "Deploy Azure Function App ",
                             "refName": "AzureRmWebAppDeployment1",
                             "enabled": true,
                             "alwaysRun": false,
@@ -406,7 +362,7 @@
                         {
                             "taskId": "9d2e4cf0-f3bb-11e6-978b-770d284f4f2d",
                             "version": "1.*",
-                            "name": "Configure Azure Function App Settings",
+                            "name": "Configure Azure Logic App Settings",
                             "refName": "AzureAppServiceSetAppSettings1",
                             "enabled": true,
                             "alwaysRun": false,
@@ -455,6 +411,33 @@
                             "inputs": {
                                 "crmConnectionString": "$(dynConnectionString)",
                                 "secureConfiguration": "[\n['0d392320-e6b5-e611-80f3-c4346bac2908','$(NamespaceConnectionString);EntityPath=crmqueue']\n]"
+                            }
+                        },
+                        {
+                            "taskId": "0c3e661c-d316-443e-9a77-470989da8e29",
+                            "version": "8.*",
+                            "name": "Backup Dynamics 365 Instance",
+                            "refName": "MSCRMBackupOnlineInstance2",
+                            "enabled": true,
+                            "alwaysRun": false,
+                            "continueOnError": false,
+                            "timeoutInMinutes": 0,
+                            "definitionType": "task",
+                            "overrideInputs": {},
+                            "condition": "succeeded()",
+                            "inputs": {
+                                "apiUrl": "$(dynMgmtApiUrl)",
+                                "username": "$(dynUserName)",
+                                "Password": "$(dynPassword)",
+                                "instanceName": "$(dynDomain)",
+                                "backupLabel": "vsts initiated backup - $(Build.BuildNumber)",
+                                "notes": "",
+                                "isAzureBackup": "false",
+                                "containerName": "",
+                                "storageAccountKey": "",
+                                "storageAccountName": "",
+                                "waitForCompletion": "true",
+                                "sleepDuration": "5"
                             }
                         }
                     ]
