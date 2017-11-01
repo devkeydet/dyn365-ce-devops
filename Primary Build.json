@@ -95,7 +95,7 @@
     "web": { "href": "https://dkdtdevops.visualstudio.com/_permalink/_build/index?collectionId=d9f3dc16-657a-4720-bce2-9a7f421ec538&projectId=7895651c-7f1a-466c-aa8f-0352510e6c2c&definitionId=2" },
     "editor": { "href": "https://dkdtdevops.visualstudio.com/_permalink/_build/definitionEditor?collectionId=d9f3dc16-657a-4720-bce2-9a7f421ec538&projectId=7895651c-7f1a-466c-aa8f-0352510e6c2c&definitionId=2" }
   },
-  "buildNumberFormat": "$(date:yyyyMMdd)$(rev:.r)",
+  "buildNumberFormat": "$(BuildDefinitionName)_1.0.0$(Rev:.r)",
   "jobAuthorizationScope": 1,
   "jobTimeoutInMinutes": 60,
   "jobCancelTimeoutInMinutes": 5,
@@ -267,7 +267,7 @@
               "unpackedFilesFolder": "SolutionPackage/package",
               "mappingFile": "SolutionPackage/map.xml",
               "packageType": "Unmanaged",
-              "updateVersion": "false",
+              "updateVersion": "true",
               "includeVersionInSolutionFile": "false",
               "outputPath": "$(build.artifactstagingdirectory)/DeploymentPackage/bin/Release/PkgFolder",
               "treatPackWarningsAsErrors": "false"
