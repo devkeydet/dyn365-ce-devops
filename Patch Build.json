@@ -1,0 +1,295 @@
+{
+    "options": [
+        {
+            "enabled": false,
+            "definition": {
+                "id": "5d58cc01-7c75-450c-be18-a388ddb129ec"
+            },
+            "inputs": {
+                "branchFilters": "[\"+refs/heads/*\"]",
+                "additionalFields": "{}"
+            }
+        },
+        {
+            "enabled": false,
+            "definition": {
+                "id": "a9db38f9-9fdc-478c-b0f9-464221e58316"
+            },
+            "inputs": {
+                "workItemType": "930827",
+                "assignToRequestor": "true",
+                "additionalFields": "{}"
+            }
+        },
+        {
+            "enabled": false,
+            "definition": {
+                "id": "57578776-4c22-4526-aeb0-86b6da17ee9c"
+            },
+            "inputs": {}
+        }
+    ],
+    "variables": {
+        "system.debug": {
+            "value": "false",
+            "allowOverride": true
+        }
+    },
+    "retentionRules": [
+        {
+            "branches": [
+                "+refs/heads/*"
+            ],
+            "artifacts": [],
+            "artifactTypesToDelete": [
+                "FilePath",
+                "SymbolStore"
+            ],
+            "daysToKeep": 10,
+            "minimumToKeep": 1,
+            "deleteBuildRecord": true,
+            "deleteTestResults": true
+        }
+    ],
+    "metrics": [
+        {
+            "name": "CurrentBuildsInQueue",
+            "scope": "refs/heads/master",
+            "intValue": 0
+        },
+        {
+            "name": "CurrentBuildsInProgress",
+            "scope": "refs/heads/master",
+            "intValue": 0
+        },
+        {
+            "name": "CurrentBuildsInQueue",
+            "scope": "refs/heads/master",
+            "intValue": 0
+        },
+        {
+            "name": "CurrentBuildsInProgress",
+            "scope": "refs/heads/master",
+            "intValue": 0
+        },
+        {
+            "name": "CanceledBuilds",
+            "scope": "refs/heads/master",
+            "intValue": 0,
+            "date": "2017-11-02T00:00:00.000Z"
+        },
+        {
+            "name": "FailedBuilds",
+            "scope": "refs/heads/master",
+            "intValue": 0,
+            "date": "2017-11-02T00:00:00.000Z"
+        },
+        {
+            "name": "PartiallySuccessfulBuilds",
+            "scope": "refs/heads/master",
+            "intValue": 0,
+            "date": "2017-11-02T00:00:00.000Z"
+        },
+        {
+            "name": "SuccessfulBuilds",
+            "scope": "refs/heads/master",
+            "intValue": 4,
+            "date": "2017-11-02T00:00:00.000Z"
+        },
+        {
+            "name": "TotalBuilds",
+            "scope": "refs/heads/master",
+            "intValue": 4,
+            "date": "2017-11-02T00:00:00.000Z"
+        },
+        {
+            "name": "CanceledBuilds",
+            "scope": "refs/heads/master",
+            "intValue": 0,
+            "date": "2017-11-02T00:00:00.000Z"
+        },
+        {
+            "name": "FailedBuilds",
+            "scope": "refs/heads/master",
+            "intValue": 1,
+            "date": "2017-11-02T00:00:00.000Z"
+        },
+        {
+            "name": "PartiallySuccessfulBuilds",
+            "scope": "refs/heads/master",
+            "intValue": 0,
+            "date": "2017-11-02T00:00:00.000Z"
+        },
+        {
+            "name": "SuccessfulBuilds",
+            "scope": "refs/heads/master",
+            "intValue": 0,
+            "date": "2017-11-02T00:00:00.000Z"
+        },
+        {
+            "name": "TotalBuilds",
+            "scope": "refs/heads/master",
+            "intValue": 1,
+            "date": "2017-11-02T00:00:00.000Z"
+        }
+    ],
+    "_links": {
+        "self": {
+            "href": "https://dkdtdevops.visualstudio.com/7895651c-7f1a-466c-aa8f-0352510e6c2c/_apis/build/Definitions/4"
+        },
+        "web": {
+            "href": "https://dkdtdevops.visualstudio.com/_permalink/_build/index?collectionId=d9f3dc16-657a-4720-bce2-9a7f421ec538&projectId=7895651c-7f1a-466c-aa8f-0352510e6c2c&definitionId=4"
+        },
+        "editor": {
+            "href": "https://dkdtdevops.visualstudio.com/_permalink/_build/definitionEditor?collectionId=d9f3dc16-657a-4720-bce2-9a7f421ec538&projectId=7895651c-7f1a-466c-aa8f-0352510e6c2c&definitionId=4"
+        }
+    },
+    "buildNumberFormat": "1.0.1$(Rev:.r)",
+    "jobAuthorizationScope": 1,
+    "jobTimeoutInMinutes": 60,
+    "jobCancelTimeoutInMinutes": 5,
+    "process": {
+        "phases": [
+            {
+                "dependencies": [],
+                "steps": [
+                    {
+                        "environment": {},
+                        "enabled": true,
+                        "continueOnError": false,
+                        "alwaysRun": false,
+                        "displayName": "MSCRM Pack Solution",
+                        "timeoutInMinutes": 0,
+                        "condition": "succeeded()",
+                        "refName": "MSCRMPackSolution1",
+                        "task": {
+                            "id": "ebec2a90-ce1f-11e6-ae21-c1fb031659ee",
+                            "versionSpec": "8.*",
+                            "definitionType": "task"
+                        },
+                        "inputs": {
+                            "unpackedFilesFolder": "SolutionPackage/Patch_1cf549bc",
+                            "mappingFile": "SolutionPackage/map.xml",
+                            "packageType": "Unmanaged",
+                            "updateVersion": "true",
+                            "includeVersionInSolutionFile": "false",
+                            "outputPath": "$(build.artifactstagingdirectory)/Patches",
+                            "treatPackWarningsAsErrors": "false"
+                        }
+                    },
+                    {
+                        "environment": {},
+                        "enabled": true,
+                        "continueOnError": false,
+                        "alwaysRun": false,
+                        "displayName": "Copy Files to: $(build.artifactstagingdirectory)",
+                        "timeoutInMinutes": 0,
+                        "condition": "succeeded()",
+                        "refName": "CopyFiles1",
+                        "task": {
+                            "id": "5bfb729a-a7c8-4a78-a7c3-8d717bb7c13c",
+                            "versionSpec": "2.*",
+                            "definitionType": "task"
+                        },
+                        "inputs": {
+                            "SourceFolder": "$(build.sourcesdirectory)",
+                            "Contents": "**\\*.zip",
+                            "TargetFolder": "$(build.artifactstagingdirectory)",
+                            "CleanTargetFolder": "false",
+                            "OverWrite": "false",
+                            "flattenFolders": "false"
+                        }
+                    },
+                    {
+                        "environment": {},
+                        "enabled": true,
+                        "continueOnError": false,
+                        "alwaysRun": false,
+                        "displayName": "Publish Artifact: Publish Artifact: drop",
+                        "timeoutInMinutes": 0,
+                        "condition": "succeeded()",
+                        "refName": "PublishBuildArtifacts2",
+                        "task": {
+                            "id": "2ff763a7-ce83-4e1f-bc89-0ae63477cebe",
+                            "versionSpec": "1.*",
+                            "definitionType": "task"
+                        },
+                        "inputs": {
+                            "PathtoPublish": "$(build.artifactstagingdirectory)",
+                            "ArtifactName": "drop",
+                            "ArtifactType": "Container",
+                            "TargetPath": "\\\\my\\share\\$(Build.DefinitionName)\\$(Build.BuildNumber)",
+                            "Parallel": "false",
+                            "ParallelCount": "8"
+                        }
+                    }
+                ],
+                "variables": {},
+                "name": "Phase 1",
+                "target": {
+                    "demands": [],
+                    "executionOptions": {
+                        "type": 0
+                    },
+                    "type": 1
+                },
+                "jobAuthorizationScope": "projectCollection",
+                "jobCancelTimeoutInMinutes": 1
+            }
+        ],
+        "type": 1
+    },
+    "repository": {
+        "properties": {
+            "cleanOptions": "0",
+            "gitLfsSupport": "false",
+            "skipSyncSource": "false",
+            "checkoutNestedSubmodules": "false",
+            "fetchDepth": "0",
+            "connectedServiceId": "b16df596-1a9b-45ed-a715-02641c10e9ed"
+        },
+        "id": "https://github.com/devkeydet/CrmAsyncRequestResponseSampleV2",
+        "type": "Git",
+        "name": "GitHub devkeydet CrmAsyncRequestResponseSampleV2",
+        "url": "https://github.com/devkeydet/CrmAsyncRequestResponseSampleV2",
+        "defaultBranch": "master",
+        "clean": "false",
+        "checkoutSubmodules": false
+    },
+    "processParameters": {},
+    "quality": 1,
+    "authoredBy": {
+        "id": "6582fd44-c7b5-6af6-8054-e8e93761fc9c",
+        "displayName": "Marc Schweigert",
+        "uniqueName": "admin@dkdtdevops.onmicrosoft.com",
+        "url": "https://app.vssps.visualstudio.com/A23c752fb-0c7e-40ce-b5fc-276e6094b415/_apis/Identities/6582fd44-c7b5-6af6-8054-e8e93761fc9c",
+        "imageUrl": "https://dkdtdevops.visualstudio.com/_api/_common/identityImage?id=6582fd44-c7b5-6af6-8054-e8e93761fc9c"
+    },
+    "drafts": [],
+    "queue": {
+        "id": 4,
+        "name": "Hosted VS2017",
+        "pool": {
+            "id": 4,
+            "name": "Hosted VS2017",
+            "isHosted": true
+        }
+    },
+    "id": 4,
+    "name": "Patch Build",
+    "url": "https://dkdtdevops.visualstudio.com/7895651c-7f1a-466c-aa8f-0352510e6c2c/_apis/build/Definitions/4",
+    "uri": "vstfs:///Build/Definition/4",
+    "path": "\\",
+    "type": 2,
+    "queueStatus": 0,
+    "revision": 7,
+    "createdDate": "2017-11-02T11:58:44.290Z",
+    "project": {
+        "id": "7895651c-7f1a-466c-aa8f-0352510e6c2c",
+        "name": "MyFirstProject",
+        "url": "https://dkdtdevops.visualstudio.com/_apis/projects/7895651c-7f1a-466c-aa8f-0352510e6c2c",
+        "state": "wellFormed",
+        "revision": 8,
+        "visibility": 0
+    }
+}

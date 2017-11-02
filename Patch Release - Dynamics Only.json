@@ -1,0 +1,280 @@
+{
+    "source": 2,
+    "id": 6,
+    "revision": 29,
+    "name": "Patch Release - Dynamics Only",
+    "description": null,
+    "createdBy": {
+        "id": "6582fd44-c7b5-6af6-8054-e8e93761fc9c",
+        "displayName": "Marc Schweigert",
+        "uniqueName": "admin@dkdtdevops.onmicrosoft.com",
+        "url": "https://app.vssps.visualstudio.com/A23c752fb-0c7e-40ce-b5fc-276e6094b415/_apis/Identities/6582fd44-c7b5-6af6-8054-e8e93761fc9c",
+        "imageUrl": "https://dkdtdevops.visualstudio.com/_api/_common/identityImage?id=6582fd44-c7b5-6af6-8054-e8e93761fc9c"
+    },
+    "createdOn": "2017-11-02T00:23:31.753Z",
+    "modifiedBy": {
+        "id": "6582fd44-c7b5-6af6-8054-e8e93761fc9c",
+        "displayName": "Marc Schweigert",
+        "uniqueName": "admin@dkdtdevops.onmicrosoft.com",
+        "url": "https://app.vssps.visualstudio.com/A23c752fb-0c7e-40ce-b5fc-276e6094b415/_apis/Identities/6582fd44-c7b5-6af6-8054-e8e93761fc9c",
+        "imageUrl": "https://dkdtdevops.visualstudio.com/_api/_common/identityImage?id=6582fd44-c7b5-6af6-8054-e8e93761fc9c"
+    },
+    "modifiedOn": "2017-11-02T23:19:07.077Z",
+    "isDeleted": false,
+    "path": "\\",
+    "variables": {
+        "dynConnectionString": {
+            "value": "AuthType=Office365;Username=$(dynUserName);Url=$(dynUrl);Password=$(dynPassword)"
+        },
+        "dynMgmtApiUrl": {
+            "value": "https://admin.services.crm.dynamics.com"
+        },
+        "dynUrl": {
+            "value": "https://$(dynDomain).crm.dynamics.com"
+        },
+        "dynUserName": {
+            "value": "$(dynUser)@$(dynTenant)"
+        }
+    },
+    "variableGroups": [],
+    "environments": [
+        {
+            "id": 6,
+            "name": "myenvironment",
+            "rank": 1,
+            "owner": {
+                "id": "6582fd44-c7b5-6af6-8054-e8e93761fc9c",
+                "displayName": "Marc Schweigert",
+                "uniqueName": "admin@dkdtdevops.onmicrosoft.com",
+                "url": "https://app.vssps.visualstudio.com/A23c752fb-0c7e-40ce-b5fc-276e6094b415/_apis/Identities/6582fd44-c7b5-6af6-8054-e8e93761fc9c",
+                "imageUrl": "https://dkdtdevops.visualstudio.com/_api/_common/identityImage?id=6582fd44-c7b5-6af6-8054-e8e93761fc9c"
+            },
+            "variables": {
+                "dynDomain": {
+                    "value": "yourdyndomain"
+                },
+                "dynPassword": {
+                    "value": null,
+                    "isSecret": true
+                },
+                "dynTenant": {
+                    "value": "yourtenant.onmicrosoft.com"
+                },
+                "dynUser": {
+                    "value": "youruser"
+                }
+            },
+            "preDeployApprovals": {
+                "approvals": [
+                    {
+                        "rank": 1,
+                        "isAutomated": true,
+                        "isNotificationOn": false,
+                        "id": 16
+                    }
+                ]
+            },
+            "deployStep": {
+                "tasks": [],
+                "id": 17
+            },
+            "postDeployApprovals": {
+                "approvals": [
+                    {
+                        "rank": 1,
+                        "isAutomated": true,
+                        "isNotificationOn": false,
+                        "id": 18
+                    }
+                ]
+            },
+            "deployPhases": [
+                {
+                    "deploymentInput": {
+                        "parallelExecution": {
+                            "parallelExecutionType": "none"
+                        },
+                        "skipArtifactsDownload": false,
+                        "artifactsDownloadInput": {
+                            "downloadInputs": []
+                        },
+                        "queueId": 4,
+                        "demands": [],
+                        "enableAccessToken": false,
+                        "timeoutInMinutes": 0,
+                        "jobCancelTimeoutInMinutes": 1,
+                        "condition": "succeeded()",
+                        "overrideInputs": {}
+                    },
+                    "rank": 1,
+                    "phaseType": 1,
+                    "name": "Agent phase",
+                    "workflowTasks": [
+                        {
+                            "taskId": "a6eb6b39-f378-4328-b533-d88f36be7a2a",
+                            "version": "8.*",
+                            "name": "Restore from 1.0.0.1 Backup",
+                            "refName": "MSCRMRestoreOnlineInstance2",
+                            "enabled": true,
+                            "alwaysRun": false,
+                            "continueOnError": false,
+                            "timeoutInMinutes": 0,
+                            "definitionType": "task",
+                            "overrideInputs": {},
+                            "condition": "succeeded()",
+                            "inputs": {
+                                "apiUrl": "$(dynMgmtApiUrl)",
+                                "username": "$(dynUserName)",
+                                "Password": "$(dynPassword)",
+                                "sourceInstanceName": "$(dynDomain)",
+                                "backupLabel": "1.0.0.1",
+                                "targetInstanceName": "$(dynDomain)",
+                                "waitForCompletion": "true",
+                                "sleepDuration": "5"
+                            }
+                        },
+                        {
+                            "taskId": "4455576d-d40a-4234-ad75-3d7ff40ec76e",
+                            "version": "8.*",
+                            "name": "MSCRM Import Solution",
+                            "refName": "MSCRMImportSolution1",
+                            "enabled": true,
+                            "alwaysRun": false,
+                            "continueOnError": false,
+                            "timeoutInMinutes": 0,
+                            "definitionType": "task",
+                            "overrideInputs": {},
+                            "condition": "succeeded()",
+                            "inputs": {
+                                "crmConnectionString": "$(dynConnectionString)",
+                                "solutionFile": "$(System.DefaultWorkingDirectory)/Patch Build/drop/Patches/AsyncRequestResponseSample_Patch_1cf549bc.zip",
+                                "publishWorkflows": "false",
+                                "overwriteUnmanagedCustomizations": "false",
+                                "skipProductUpdateDependencies": "false",
+                                "convertToManaged": "false",
+                                "holdingSolution": "false",
+                                "override": "false",
+                                "asyncWaitTimeout": "900"
+                            }
+                        },
+                        {
+                            "taskId": "f64d3db3-f19a-41dd-bdb8-f8f0e60a4bb1",
+                            "version": "8.*",
+                            "name": "MSCRM Publish Customizations",
+                            "refName": "MSCRMPublishCustomizations1",
+                            "enabled": true,
+                            "alwaysRun": false,
+                            "continueOnError": false,
+                            "timeoutInMinutes": 0,
+                            "definitionType": "task",
+                            "overrideInputs": {},
+                            "condition": "succeeded()",
+                            "inputs": {
+                                "crmConnectionString": "$(dynConnectionString)"
+                            }
+                        },
+                        {
+                            "taskId": "e213ff0f-5d5c-4791-802d-52ea3e7be1f1",
+                            "version": "1.*",
+                            "name": "Disable Admin Mode",
+                            "refName": "PowerShell1",
+                            "enabled": true,
+                            "alwaysRun": false,
+                            "continueOnError": false,
+                            "timeoutInMinutes": 0,
+                            "definitionType": "task",
+                            "overrideInputs": {},
+                            "condition": "succeeded()",
+                            "inputs": {
+                                "scriptType": "inlineScript",
+                                "scriptName": "",
+                                "arguments": "-p \"$(dynPassword)\"",
+                                "workingFolder": "",
+                                "inlineScript": "#TODO: Replace once a MSCRM task is added\nparam($p)\nInstall-Module -Name Microsoft.Xrm.OnlineManagementAPI -Force -Scope currentuser\n$SecPassword = ConvertTo-SecureString $p -AsPlainText -Force\n$Cred = New-Object System.Management.Automation.PSCredential ($env:dynUserName, $SecPassword)\n#Hard coding InstanceId temporarily until MSCRM task is ready\nDisable-CrmAdminMode -InstanceId 5af411be-bd08-4649-a1b3-df3234b457e5 -ApiUrl $env:dynMgmtApiUrl -Credential $Cred",
+                                "failOnStandardError": "true"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "environmentOptions": {
+                "emailNotificationType": "OnlyOnFailure",
+                "emailRecipients": "release.environment.owner;release.creator",
+                "skipArtifactsDownload": false,
+                "timeoutInMinutes": 0,
+                "enableAccessToken": false,
+                "publishDeploymentStatus": true
+            },
+            "demands": [],
+            "conditions": [],
+            "executionPolicy": {
+                "concurrencyCount": 0,
+                "queueDepthCount": 0
+            },
+            "schedules": [],
+            "retentionPolicy": {
+                "daysToKeep": 30,
+                "releasesToKeep": 3,
+                "retainBuild": true
+            },
+            "processParameters": {},
+            "properties": {}
+        }
+    ],
+    "artifacts": [
+        {
+            "sourceId": "7895651c-7f1a-466c-aa8f-0352510e6c2c:4",
+            "type": "Build",
+            "alias": "Patch Build",
+            "definitionReference": {
+                "artifactSourceDefinitionUrl": {
+                    "id": "https://dkdtdevops.visualstudio.com/_permalink/_build/index?collectionId=d9f3dc16-657a-4720-bce2-9a7f421ec538&projectId=7895651c-7f1a-466c-aa8f-0352510e6c2c&definitionId=4",
+                    "name": ""
+                },
+                "defaultVersionBranch": {
+                    "id": "",
+                    "name": ""
+                },
+                "defaultVersionSpecific": {
+                    "id": "",
+                    "name": ""
+                },
+                "defaultVersionTags": {
+                    "id": "",
+                    "name": ""
+                },
+                "defaultVersionType": {
+                    "id": "latestType",
+                    "name": "Latest"
+                },
+                "definition": {
+                    "id": "4",
+                    "name": "Patch Build"
+                },
+                "project": {
+                    "id": "7895651c-7f1a-466c-aa8f-0352510e6c2c",
+                    "name": "MyFirstProject"
+                }
+            },
+            "isPrimary": true
+        }
+    ],
+    "triggers": [],
+    "releaseNameFormat": "Patch Release - Dynamics Only $(Build.BuildNumber)-$(Date:hhmmss)",
+    "url": "https://dkdtdevops.vsrm.visualstudio.com/7895651c-7f1a-466c-aa8f-0352510e6c2c/_apis/Release/definitions/6",
+    "_links": {
+        "self": {
+            "href": "https://dkdtdevops.vsrm.visualstudio.com/7895651c-7f1a-466c-aa8f-0352510e6c2c/_apis/Release/definitions/6"
+        },
+        "web": {
+            "href": "https://dkdtdevops.visualstudio.com/7895651c-7f1a-466c-aa8f-0352510e6c2c/_release?definitionId=6"
+        }
+    },
+    "tags": [],
+    "properties": {
+        "DefinitionCreationSource": {
+            "$type": "System.String",
+            "$value": "ReleaseNew"
+        }
+    }
+}
