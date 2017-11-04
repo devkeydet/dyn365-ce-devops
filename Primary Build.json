@@ -74,6 +74,36 @@
             "name": "CanceledBuilds",
             "scope": "refs/heads/master",
             "intValue": 0,
+            "date": "2017-11-04T00:00:00.000Z"
+        },
+        {
+            "name": "FailedBuilds",
+            "scope": "refs/heads/master",
+            "intValue": 0,
+            "date": "2017-11-04T00:00:00.000Z"
+        },
+        {
+            "name": "PartiallySuccessfulBuilds",
+            "scope": "refs/heads/master",
+            "intValue": 0,
+            "date": "2017-11-04T00:00:00.000Z"
+        },
+        {
+            "name": "SuccessfulBuilds",
+            "scope": "refs/heads/master",
+            "intValue": 2,
+            "date": "2017-11-04T00:00:00.000Z"
+        },
+        {
+            "name": "TotalBuilds",
+            "scope": "refs/heads/master",
+            "intValue": 2,
+            "date": "2017-11-04T00:00:00.000Z"
+        },
+        {
+            "name": "CanceledBuilds",
+            "scope": "refs/heads/master",
+            "intValue": 0,
             "date": "2017-11-03T00:00:00.000Z"
         },
         {
@@ -91,13 +121,13 @@
         {
             "name": "SuccessfulBuilds",
             "scope": "refs/heads/master",
-            "intValue": 2,
+            "intValue": 3,
             "date": "2017-11-03T00:00:00.000Z"
         },
         {
             "name": "TotalBuilds",
             "scope": "refs/heads/master",
-            "intValue": 3,
+            "intValue": 4,
             "date": "2017-11-03T00:00:00.000Z"
         },
         {
@@ -282,7 +312,7 @@
                             "vstestLocationMethod": "version",
                             "vsTestVersion": "latest",
                             "vstestLocation": "",
-                            "runSettingsFile": "",
+                            "runSettingsFile": "CodeCoverage.runsettings",
                             "overrideTestrunParameters": "",
                             "pathtoCustomTestAdapters": "",
                             "runInParallel": "False",
@@ -489,8 +519,8 @@
     "path": "\\",
     "type": 2,
     "queueStatus": 0,
-    "revision": 6,
-    "createdDate": "2017-11-03T01:40:58.540Z",
+    "revision": 7,
+    "createdDate": "2017-11-04T16:38:28.747Z",
     "project": {
         "id": "7895651c-7f1a-466c-aa8f-0352510e6c2c",
         "name": "MyFirstProject",
