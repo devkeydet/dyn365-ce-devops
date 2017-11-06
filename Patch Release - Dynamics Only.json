@@ -127,7 +127,7 @@
                                 "username": "$(dynUserName)",
                                 "Password": "$(dynPassword)",
                                 "sourceInstanceName": "$(dynDomain)",
-                                "backupLabel": "1.0.0.1",
+                                "backupLabel": "your-backup-label",
                                 "targetInstanceName": "$(dynDomain)",
                                 "waitForCompletion": "true",
                                 "sleepDuration": "5"
