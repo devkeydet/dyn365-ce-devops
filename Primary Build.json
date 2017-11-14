@@ -37,10 +37,6 @@
         "BuildPlatform": {
             "value": "any cpu",
             "allowOverride": true
-        },
-        "system.debug": {
-            "value": "false",
-            "allowOverride": true
         }
     },
     "retentionRules": [
@@ -71,124 +67,104 @@
             "intValue": 0
         },
         {
-            "name": "CanceledBuilds",
-            "scope": "refs/heads/master",
-            "intValue": 0,
-            "date": "2017-11-04T00:00:00.000Z"
+            "name": "CurrentBuildsInQueue",
+            "scope": "refs/heads/issue7",
+            "intValue": 0
         },
         {
-            "name": "FailedBuilds",
-            "scope": "refs/heads/master",
-            "intValue": 0,
-            "date": "2017-11-04T00:00:00.000Z"
-        },
-        {
-            "name": "PartiallySuccessfulBuilds",
-            "scope": "refs/heads/master",
-            "intValue": 0,
-            "date": "2017-11-04T00:00:00.000Z"
-        },
-        {
-            "name": "SuccessfulBuilds",
-            "scope": "refs/heads/master",
-            "intValue": 2,
-            "date": "2017-11-04T00:00:00.000Z"
-        },
-        {
-            "name": "TotalBuilds",
-            "scope": "refs/heads/master",
-            "intValue": 2,
-            "date": "2017-11-04T00:00:00.000Z"
+            "name": "CurrentBuildsInProgress",
+            "scope": "refs/heads/issue7",
+            "intValue": 0
         },
         {
             "name": "CanceledBuilds",
             "scope": "refs/heads/master",
             "intValue": 0,
-            "date": "2017-11-03T00:00:00.000Z"
+            "date": "2017-11-14T00:00:00.000Z"
         },
         {
             "name": "FailedBuilds",
-            "scope": "refs/heads/master",
-            "intValue": 1,
-            "date": "2017-11-03T00:00:00.000Z"
-        },
-        {
-            "name": "PartiallySuccessfulBuilds",
-            "scope": "refs/heads/master",
-            "intValue": 0,
-            "date": "2017-11-03T00:00:00.000Z"
-        },
-        {
-            "name": "SuccessfulBuilds",
             "scope": "refs/heads/master",
             "intValue": 3,
-            "date": "2017-11-03T00:00:00.000Z"
+            "date": "2017-11-14T00:00:00.000Z"
+        },
+        {
+            "name": "PartiallySuccessfulBuilds",
+            "scope": "refs/heads/master",
+            "intValue": 0,
+            "date": "2017-11-14T00:00:00.000Z"
+        },
+        {
+            "name": "SuccessfulBuilds",
+            "scope": "refs/heads/master",
+            "intValue": 1,
+            "date": "2017-11-14T00:00:00.000Z"
         },
         {
             "name": "TotalBuilds",
             "scope": "refs/heads/master",
             "intValue": 4,
-            "date": "2017-11-03T00:00:00.000Z"
+            "date": "2017-11-14T00:00:00.000Z"
         },
         {
             "name": "CanceledBuilds",
-            "scope": "refs/heads/master",
+            "scope": "refs/heads/issue7",
             "intValue": 0,
-            "date": "2017-11-02T00:00:00.000Z"
+            "date": "2017-11-14T00:00:00.000Z"
         },
         {
             "name": "FailedBuilds",
-            "scope": "refs/heads/master",
-            "intValue": 2,
-            "date": "2017-11-02T00:00:00.000Z"
+            "scope": "refs/heads/issue7",
+            "intValue": 3,
+            "date": "2017-11-14T00:00:00.000Z"
         },
         {
             "name": "PartiallySuccessfulBuilds",
-            "scope": "refs/heads/master",
+            "scope": "refs/heads/issue7",
             "intValue": 0,
-            "date": "2017-11-02T00:00:00.000Z"
+            "date": "2017-11-14T00:00:00.000Z"
         },
         {
             "name": "SuccessfulBuilds",
-            "scope": "refs/heads/master",
+            "scope": "refs/heads/issue7",
             "intValue": 0,
-            "date": "2017-11-02T00:00:00.000Z"
+            "date": "2017-11-14T00:00:00.000Z"
         },
         {
             "name": "TotalBuilds",
-            "scope": "refs/heads/master",
-            "intValue": 2,
-            "date": "2017-11-02T00:00:00.000Z"
+            "scope": "refs/heads/issue7",
+            "intValue": 3,
+            "date": "2017-11-14T00:00:00.000Z"
         },
         {
             "name": "CanceledBuilds",
-            "scope": "refs/heads/master",
-            "intValue": 0,
-            "date": "2017-11-01T00:00:00.000Z"
+            "scope": "refs/heads/issue7",
+            "intValue": 1,
+            "date": "2017-11-11T00:00:00.000Z"
         },
         {
             "name": "FailedBuilds",
-            "scope": "refs/heads/master",
-            "intValue": 0,
-            "date": "2017-11-01T00:00:00.000Z"
+            "scope": "refs/heads/issue7",
+            "intValue": 9,
+            "date": "2017-11-11T00:00:00.000Z"
         },
         {
             "name": "PartiallySuccessfulBuilds",
-            "scope": "refs/heads/master",
+            "scope": "refs/heads/issue7",
             "intValue": 0,
-            "date": "2017-11-01T00:00:00.000Z"
+            "date": "2017-11-11T00:00:00.000Z"
         },
         {
             "name": "SuccessfulBuilds",
-            "scope": "refs/heads/master",
-            "intValue": 2,
-            "date": "2017-11-01T00:00:00.000Z"
+            "scope": "refs/heads/issue7",
+            "intValue": 5,
+            "date": "2017-11-11T00:00:00.000Z"
         },
         {
             "name": "TotalBuilds",
-            "scope": "refs/heads/master",
-            "intValue": 2,
-            "date": "2017-11-01T00:00:00.000Z"
+            "scope": "refs/heads/issue7",
+            "intValue": 15,
+            "date": "2017-11-11T00:00:00.000Z"
         }
     ],
     "_links": {
@@ -289,7 +265,7 @@
                         "enabled": true,
                         "continueOnError": false,
                         "alwaysRun": false,
-                        "displayName": "Run Unit Tests",
+                        "displayName": "Run .NET Unit Tests",
                         "timeoutInMinutes": 0,
                         "refName": "VSTest4",
                         "task": {
@@ -329,6 +305,99 @@
                             "platform": "$(BuildPlatform)",
                             "configuration": "$(BuildConfiguration)",
                             "publishRunAttachments": "true"
+                        }
+                    },
+                    {
+                        "environment": {},
+                        "enabled": true,
+                        "continueOnError": false,
+                        "alwaysRun": false,
+                        "displayName": "Update chutzpah.json for code coverage (workaround...see source code)",
+                        "timeoutInMinutes": 0,
+                        "condition": "succeeded()",
+                        "refName": "RegExMatchReplace1",
+                        "task": {
+                            "id": "86e3367d-c1d2-40a3-ab67-abd1924ce49f",
+                            "versionSpec": "2.*",
+                            "definitionType": "task"
+                        },
+                        "inputs": {
+                            "PathToFile": "$(Build.SourcesDirectory)\\WebResources\\tests\\chutzpah.json",
+                            "RegEx": "\"CodeCoverageExecutionMode\": \"Manual\"",
+                            "Global": "false",
+                            "IgnoreCase": "false",
+                            "MultiLine": "false",
+                            "ValueToReplace": "\"CodeCoverageExecutionMode\": \"Always\""
+                        }
+                    },
+                    {
+                        "environment": {},
+                        "enabled": true,
+                        "continueOnError": false,
+                        "alwaysRun": false,
+                        "displayName": "Run JavaScript Unit Tests",
+                        "timeoutInMinutes": 0,
+                        "condition": "succeeded()",
+                        "refName": "VSTest1",
+                        "task": {
+                            "id": "ef087383-ee5e-42c7-9a53-ab56c98420f9",
+                            "versionSpec": "2.*",
+                            "definitionType": "task"
+                        },
+                        "inputs": {
+                            "testSelector": "testAssemblies",
+                            "testAssemblyVer2": "$(Build.SourcesDirectory)\\WebResources\\tests\\*.tests.js",
+                            "testPlan": "",
+                            "testSuite": "",
+                            "testConfiguration": "",
+                            "tcmTestRun": "$(test.RunId)",
+                            "searchFolder": "$(System.DefaultWorkingDirectory)",
+                            "testFiltercriteria": "",
+                            "runOnlyImpactedTests": "False",
+                            "runAllTestsAfterXBuilds": "50",
+                            "uiTests": "false",
+                            "vstestLocationMethod": "version",
+                            "vsTestVersion": "latest",
+                            "vstestLocation": "",
+                            "runSettingsFile": "",
+                            "overrideTestrunParameters": "",
+                            "pathtoCustomTestAdapters": "$(Build.SourcesDirectory)\\packages",
+                            "runInParallel": "False",
+                            "runTestsInIsolation": "False",
+                            "codeCoverageEnabled": "false",
+                            "otherConsoleOptions": "",
+                            "distributionBatchType": "basedOnTestCases",
+                            "batchingBasedOnAgentsOption": "autoBatchSize",
+                            "customBatchSizeValue": "10",
+                            "batchingBasedOnExecutionTimeOption": "autoBatchSize",
+                            "customRunTimePerBatchValue": "60",
+                            "dontDistribute": "False",
+                            "testRunTitle": "",
+                            "platform": "",
+                            "configuration": "",
+                            "publishRunAttachments": "true"
+                        }
+                    },
+                    {
+                        "environment": {},
+                        "enabled": true,
+                        "continueOnError": false,
+                        "alwaysRun": false,
+                        "displayName": "Publish code coverage from JavaScript Unit Tests",
+                        "timeoutInMinutes": 0,
+                        "condition": "succeeded()",
+                        "refName": "PublishCodeCoverageResults1",
+                        "task": {
+                            "id": "2a7ebc54-c13e-490e-81a5-d7561ab7cd97",
+                            "versionSpec": "1.*",
+                            "definitionType": "task"
+                        },
+                        "inputs": {
+                            "codeCoverageTool": "JaCoCo",
+                            "summaryFileLocation": "$(System.DefaultWorkingDirectory)\\TestResults\\chutzpah-jacoco.xml ",
+                            "reportDirectory": "",
+                            "additionalCodeCoverageFiles": "",
+                            "failIfCoverageEmpty": "true"
                         }
                     },
                     {
@@ -455,6 +524,7 @@
                     "executionOptions": {
                         "type": 0
                     },
+                    "allowScriptsAuthAccessOption": false,
                     "type": 1
                 },
                 "jobAuthorizationScope": "projectCollection",
@@ -483,6 +553,7 @@
     "processParameters": {
         "inputs": [
             {
+                "aliases": [],
                 "options": {},
                 "properties": {},
                 "name": "solution",
@@ -500,7 +571,7 @@
         "displayName": "Marc Schweigert",
         "uniqueName": "admin@dkdtdevops.onmicrosoft.com",
         "url": "https://app.vssps.visualstudio.com/A23c752fb-0c7e-40ce-b5fc-276e6094b415/_apis/Identities/6582fd44-c7b5-6af6-8054-e8e93761fc9c",
-        "imageUrl": "https://dkdtdevops.visualstudio.com/_api/_common/identityImage?id=6582fd44-c7b5-6af6-8054-e8e93761fc9c"
+        "imageUrl": "https://dkdtdevops.visualstudio.com/_api/_common/identityImage?id=6582fd44-c7b5-6af6-8054-e8e93761fc9c&t=00000000-0000-0000-2020-9a198107d508"
     },
     "drafts": [],
     "queue": {
@@ -519,8 +590,8 @@
     "path": "\\",
     "type": 2,
     "queueStatus": 0,
-    "revision": 7,
-    "createdDate": "2017-11-04T16:38:28.747Z",
+    "revision": 22,
+    "createdDate": "2017-11-14T20:01:17.633Z",
     "project": {
         "id": "7895651c-7f1a-466c-aa8f-0352510e6c2c",
         "name": "MyFirstProject",
