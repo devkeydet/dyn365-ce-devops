@@ -4,7 +4,7 @@ Please watch the following video to get a high level overview of this project:
 
 [![Video Introduction](https://img.youtube.com/vi/AorM792M8nY/0.jpg)](https://www.youtube.com/watch?v=AorM792M8nY)
 
-The purpose of this project is to provide reference examples of using [Visual Studio Team Service (VSTS)](https://www.visualstudio.com/team-services/) to build and deploy Dynamics 365 based applications.  The reference examples are based on various use cases, including:
+The project provides reference examples of using [Visual Studio Team Service (VSTS)](https://www.visualstudio.com/team-services/) to build and deploy Dynamics 365 based applications.  The reference examples are based on various use cases, including:
 
 * [Primary Release - Dynamics Only.json](https://github.com/devkeydet/dyn365-ce-devops/blob/master/Primary%20Release%20-%20Dynamics%20Only.json) - Deploying a Dynamics 365 solution package and initial data from source control.
 * [Primary Release - Dynamics + Azure.json](https://github.com/devkeydet/dyn365-ce-devops/blob/master/Primary%20Release%20-%20Dynamics%20%2B%20Azure.json) - Builds on [Primary Release - Dynamics Only.json](https://github.com/devkeydet/dyn365-ce-devops/blob/master/Primary%20Release%20-%20Dynamics%20Only.json) and adds deployment of Azure components to the release to demonstrate deploying a release across both.
@@ -16,16 +16,22 @@ https://github.com/devkeydet/CrmAsyncRequestResponseSampleV2
 
 The source code in the repository above shows how to source control *both* code and configurations associated with a Dynamics 365 demo/poc/sample.
 
-The reference build definition in this repository ([Primary Build.json](https://github.com/devkeydet/dyn365-ce-devops/blob/master/Primary%20Build.json)) shows how to use VSTS to:
-* Build assets from a remote GitHub repository
-    * This, of course, could be done from a VSTS repository as well depending on whether the source code should be public or private
-* Build all the assets from source control into their deployable form
-    * Solution package zip files
-        * Packages Dynamics 365 configuration xml files using [Solution Packager](https://msdn.microsoft.com/en-us/library/jj602987.aspx)
-    * Starter data import zip files
-        * Zips up xml files produced by the [Configuration Migration](https://technet.microsoft.com/library/dn647421.aspx) tool to setup sample data
-    * .NET dlls for both Dynamics 365 and an [Azure Function App](https://azure.microsoft.com/en-us/services/functions/)
-    * etc.
+The reference build definitions show two different build scenarios:
+
+* [Primary Build.json](https://github.com/devkeydet/dyn365-ce-devops/blob/master/Primary%20Build.json) - shows how to use VSTS to:
+    * Build assets from a remote GitHub repository
+        * This, of course, could be done from a VSTS repository as well depending on whether the source code should be public or private
+    * Build all the assets from source control into their deployable form
+        * Reports unit test pass/fail for both .net and javascript code as part of build reporting
+        * Reports code coverage of unit tests 
+        * Solution package zip files
+            * Packages Dynamics 365 configuration xml files using [Solution Packager](https://msdn.microsoft.com/en-us/library/jj602987.aspx)
+        * Starter data import zip files 
+            * Zips up xml files produced by the [Configuration Migration](https://technet.microsoft.com/library/dn647421.aspx) tool to setup sample data
+        * .NET dlls for both Dynamics 365 and an [Azure Function App](https://azure.microsoft.com/en-us/services/functions/)
+        * etc.
+* [Patch Build.json](https://github.com/devkeydet/dyn365-ce-devops/blob/master/Patch%20Build.json) - shows how to use VSTS to:
+    * Build a simple [patch](https://docs.microsoft.com/en-us/dynamics365/customer-engagement/developer/create-patches-simplify-solution-updates) from source control
 
 The reference release definitions show how to deploy assets from the build to the target environment(s).  Each does the following:
 * Primary Release - Dynamics Only.json
@@ -41,6 +47,8 @@ The reference release definitions show how to deploy assets from the build to th
     * Applies configuration settings to the Azure environment
     * Deploys the Dynamics 365 package and sample data using [Package Deployer](https://msdn.microsoft.com/en-us/library/dn688182.aspx)
     * Updates plugin [Secure Configuration](https://us.hitachi-solutions.com/blog/use-secure-vs-unsecure-configuration-plugins/) since it doesn't get stored in the solution package and can vary by environment
+* Patch Release - Dynamics Only.json
+    * Build a simple [patch](https://docs.microsoft.com/en-us/dynamics365/customer-engagement/developer/create-patches-simplify-solution-updates) that was created using [Patch Build.json](https://github.com/devkeydet/dyn365-ce-devops/blob/master/Patch%20Build.json)
 
 # Getting Started
 Please watch the following videos to help you understand how to get started:
