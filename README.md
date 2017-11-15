@@ -38,17 +38,23 @@ The reference release definitions show how to deploy assets from the build to th
     * Resets a Dynamics 365 instance by using the [Online Management API for Dynamics 365 Customer Engagement](https://docs.microsoft.com/en-us/dynamics365/customer-engagement/developer/online-management-api)
     * Deploys the Dynamics 365 package and sample/intiial data using [Package Deployer](https://msdn.microsoft.com/en-us/library/dn688182.aspx)
         * Demonstrates how to activate plugins *after* the sample/initial data is imported
-    * Updates plugin [Secure Configuration](https://us.hitachi-solutions.com/blog/use-secure-vs-unsecure-configuration-plugins/) since it doesn't get stored in the solution package and can vary by environment    
+    * Updates plugin [Secure Configuration](https://us.hitachi-solutions.com/blog/use-secure-vs-unsecure-configuration-plugins/) since it doesn't get stored in the solution package and can vary by environment
+    * Backs up the Dynamics 365 instance using the  [Online Management API for Dynamics 365 Customer Engagement](https://docs.microsoft.com/en-us/dynamics365/customer-engagement/developer/online-management-api)
 * Primary Release - Dynamics + Azure.json
     * Registers and Azure AD application so the code hosted in Azure has permissions to make web api calls to Dynamics 365
     * Resets a Dynamics 365 instance by using the [Online Management API for Dynamics 365 Customer Engagement](https://docs.microsoft.com/en-us/dynamics365/customer-engagement/developer/online-management-api)
     * Deploys an [Azure Resource Manager](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-overview) [template](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-overview#template-deployment) to provision necessary Azure resources
     * Gets configuration data from the Azure deployment for use in latter parts of the deployment process
+    * Deploys Azure Functions dlls from the build
     * Applies configuration settings to the Azure environment
     * Deploys the Dynamics 365 package and sample data using [Package Deployer](https://msdn.microsoft.com/en-us/library/dn688182.aspx)
     * Updates plugin [Secure Configuration](https://us.hitachi-solutions.com/blog/use-secure-vs-unsecure-configuration-plugins/) since it doesn't get stored in the solution package and can vary by environment
+    * Backs up the Dynamics 365 instance using the [Online Management API for Dynamics 365 Customer Engagement](https://docs.microsoft.com/en-us/dynamics365/customer-engagement/developer/online-management-api)
 * Patch Release - Dynamics Only.json
-    * Build a simple [patch](https://docs.microsoft.com/en-us/dynamics365/customer-engagement/developer/create-patches-simplify-solution-updates) that was created using [Patch Build.json](https://github.com/devkeydet/dyn365-ce-devops/blob/master/Patch%20Build.json)
+    * Restore a Dynamics 365 instances to test applying the patch to, using the [Online Management API for Dynamics 365 Customer Engagement](https://docs.microsoft.com/en-us/dynamics365/customer-engagement/developer/online-management-api)
+    * Import the patch solution
+    * Publish the customizations
+    * Disable Admin Mode using the [Online Management API for Dynamics 365 Customer Engagement](https://docs.microsoft.com/en-us/dynamics365/customer-engagement/developer/online-management-api)
 
 # Getting Started
 Please watch the following videos to help you understand how to get started:
