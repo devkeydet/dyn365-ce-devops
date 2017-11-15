@@ -1,5 +1,9 @@
 
 # Introduction
+Please watch the following video to get a high level overview of this project:
+
+[![Video Introduction](https://img.youtube.com/vi/AorM792M8nY/0.jpg)](https://www.youtube.com/watch?v=AorM792M8nY)
+
 The purpose of this project is to provide reference examples of using [Visual Studio Team Service (VSTS)](https://www.visualstudio.com/team-services/) to build and deploy Dynamics 365 based applications.  The reference examples are based on various use cases, including:
 
 * [Primary Release - Dynamics Only.json](https://github.com/devkeydet/dyn365-ce-devops/blob/master/Primary%20Release%20-%20Dynamics%20Only.json) - Deploying a Dynamics 365 solution package and initial data from source control.
