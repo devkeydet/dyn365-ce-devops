@@ -238,6 +238,26 @@
                         "enabled": true,
                         "continueOnError": false,
                         "alwaysRun": false,
+                        "displayName": "Rename appSettings.config.template",
+                        "timeoutInMinutes": 0,
+                        "condition": "succeeded()",
+                        "refName": "rename1",
+                        "task": {
+                            "id": "070a44c5-c554-4e46-ab56-4c1c30c5dc5d",
+                            "versionSpec": "0.*",
+                            "definitionType": "task"
+                        },
+                        "inputs": {
+                            "Command": "rename",
+                            "SourceFile": "$(Build.SourcesDirectory)\\UIAutomationTests\\appSettings.config.template",
+                            "NewName": "appSettings.config"
+                        }
+                    },
+                    {
+                        "environment": {},
+                        "enabled": true,
+                        "continueOnError": false,
+                        "alwaysRun": false,
                         "displayName": "Build solution **\\*.sln",
                         "timeoutInMinutes": 0,
                         "refName": "VSBuild3",
@@ -275,7 +295,7 @@
                         },
                         "inputs": {
                             "testSelector": "testAssemblies",
-                            "testAssemblyVer2": "**\\$(BuildConfiguration)\\*test*.dll\n!**\\obj\\**",
+                            "testAssemblyVer2": "**\\$(BuildConfiguration)\\*AzureFunctionApp.Tests.dll\n**\\$(BuildConfiguration)\\*Plugins.Tests.dll\n!**\\obj\\**",
                             "testPlan": "",
                             "testSuite": "",
                             "testConfiguration": "",
@@ -571,7 +591,7 @@
         "displayName": "Marc Schweigert",
         "uniqueName": "admin@dkdtdevops.onmicrosoft.com",
         "url": "https://app.vssps.visualstudio.com/A23c752fb-0c7e-40ce-b5fc-276e6094b415/_apis/Identities/6582fd44-c7b5-6af6-8054-e8e93761fc9c",
-        "imageUrl": "https://dkdtdevops.visualstudio.com/_api/_common/identityImage?id=6582fd44-c7b5-6af6-8054-e8e93761fc9c&t=00000000-0000-0000-2020-9a198107d508"
+        "imageUrl": "https://dkdtdevops.visualstudio.com/_api/_common/identityImage?id=6582fd44-c7b5-6af6-8054-e8e93761fc9c"
     },
     "drafts": [],
     "queue": {
@@ -590,8 +610,8 @@
     "path": "\\",
     "type": 2,
     "queueStatus": 0,
-    "revision": 22,
-    "createdDate": "2017-11-14T20:01:17.633Z",
+    "revision": 24,
+    "createdDate": "2017-11-17T02:26:31.893Z",
     "project": {
         "id": "7895651c-7f1a-466c-aa8f-0352510e6c2c",
         "name": "MyFirstProject",
