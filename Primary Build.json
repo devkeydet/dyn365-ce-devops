@@ -80,91 +80,31 @@
             "name": "CanceledBuilds",
             "scope": "refs/heads/master",
             "intValue": 0,
-            "date": "2017-11-14T00:00:00.000Z"
+            "date": "2017-11-27T00:00:00.000Z"
         },
         {
             "name": "FailedBuilds",
-            "scope": "refs/heads/master",
-            "intValue": 3,
-            "date": "2017-11-14T00:00:00.000Z"
-        },
-        {
-            "name": "PartiallySuccessfulBuilds",
-            "scope": "refs/heads/master",
-            "intValue": 0,
-            "date": "2017-11-14T00:00:00.000Z"
-        },
-        {
-            "name": "SuccessfulBuilds",
             "scope": "refs/heads/master",
             "intValue": 1,
-            "date": "2017-11-14T00:00:00.000Z"
+            "date": "2017-11-27T00:00:00.000Z"
+        },
+        {
+            "name": "PartiallySuccessfulBuilds",
+            "scope": "refs/heads/master",
+            "intValue": 0,
+            "date": "2017-11-27T00:00:00.000Z"
+        },
+        {
+            "name": "SuccessfulBuilds",
+            "scope": "refs/heads/master",
+            "intValue": 0,
+            "date": "2017-11-27T00:00:00.000Z"
         },
         {
             "name": "TotalBuilds",
             "scope": "refs/heads/master",
-            "intValue": 4,
-            "date": "2017-11-14T00:00:00.000Z"
-        },
-        {
-            "name": "CanceledBuilds",
-            "scope": "refs/heads/issue7",
-            "intValue": 0,
-            "date": "2017-11-14T00:00:00.000Z"
-        },
-        {
-            "name": "FailedBuilds",
-            "scope": "refs/heads/issue7",
-            "intValue": 3,
-            "date": "2017-11-14T00:00:00.000Z"
-        },
-        {
-            "name": "PartiallySuccessfulBuilds",
-            "scope": "refs/heads/issue7",
-            "intValue": 0,
-            "date": "2017-11-14T00:00:00.000Z"
-        },
-        {
-            "name": "SuccessfulBuilds",
-            "scope": "refs/heads/issue7",
-            "intValue": 0,
-            "date": "2017-11-14T00:00:00.000Z"
-        },
-        {
-            "name": "TotalBuilds",
-            "scope": "refs/heads/issue7",
-            "intValue": 3,
-            "date": "2017-11-14T00:00:00.000Z"
-        },
-        {
-            "name": "CanceledBuilds",
-            "scope": "refs/heads/issue7",
             "intValue": 1,
-            "date": "2017-11-11T00:00:00.000Z"
-        },
-        {
-            "name": "FailedBuilds",
-            "scope": "refs/heads/issue7",
-            "intValue": 9,
-            "date": "2017-11-11T00:00:00.000Z"
-        },
-        {
-            "name": "PartiallySuccessfulBuilds",
-            "scope": "refs/heads/issue7",
-            "intValue": 0,
-            "date": "2017-11-11T00:00:00.000Z"
-        },
-        {
-            "name": "SuccessfulBuilds",
-            "scope": "refs/heads/issue7",
-            "intValue": 5,
-            "date": "2017-11-11T00:00:00.000Z"
-        },
-        {
-            "name": "TotalBuilds",
-            "scope": "refs/heads/issue7",
-            "intValue": 15,
-            "date": "2017-11-11T00:00:00.000Z"
+            "date": "2017-11-27T00:00:00.000Z"
         }
     ],
     "_links": {
@@ -422,27 +362,81 @@
                     },
                     {
                         "environment": {},
-                        "enabled": false,
-                        "continueOnError": true,
+                        "enabled": true,
+                        "continueOnError": false,
                         "alwaysRun": false,
-                        "displayName": "Publish symbols path: ",
+                        "displayName": "npm install",
                         "timeoutInMinutes": 0,
-                        "refName": "PublishSymbols5",
+                        "condition": "succeeded()",
+                        "refName": "Npm1",
                         "task": {
-                            "id": "0675668a-7bba-4ccb-901d-5ad6554ca653",
+                            "id": "fe47e961-9fa8-4106-8639-368c022d43ad",
                             "versionSpec": "1.*",
                             "definitionType": "task"
                         },
                         "inputs": {
-                            "SymbolsPath": "",
-                            "SearchPattern": "**\\bin\\**\\*.pdb",
-                            "SymbolsFolder": "",
-                            "SkipIndexing": "false",
-                            "TreatNotIndexedAsWarning": "false",
-                            "SymbolsMaximumWaitTime": "",
-                            "SymbolsProduct": "",
-                            "SymbolsVersion": "",
-                            "SymbolsArtifactName": "Symbols_$(BuildConfiguration)"
+                            "command": "install",
+                            "workingDir": "$(Build.SourcesDirectory)\\WebResources",
+                            "verbose": "false",
+                            "customCommand": "",
+                            "customRegistry": "useNpmrc",
+                            "customFeed": "",
+                            "customEndpoint": "",
+                            "publishRegistry": "useExternalRegistry",
+                            "publishFeed": "",
+                            "publishEndpoint": ""
+                        }
+                    },
+                    {
+                        "environment": {},
+                        "enabled": true,
+                        "continueOnError": false,
+                        "alwaysRun": false,
+                        "displayName": "gulp uglify (minify javascript)",
+                        "timeoutInMinutes": 0,
+                        "condition": "succeeded()",
+                        "refName": "Gulp2",
+                        "task": {
+                            "id": "b82cfbe4-34f9-40f5-889e-c8842ca9dd9d",
+                            "versionSpec": "0.*",
+                            "definitionType": "task"
+                        },
+                        "inputs": {
+                            "gulpFile": "$(Build.SourcesDirectory)\\WebResources\\gulpfile.js",
+                            "targets": "uglify",
+                            "arguments": "",
+                            "cwd": "",
+                            "gulpjs": "node_modules/gulp/bin/gulp.js",
+                            "publishJUnitResults": "false",
+                            "testResultsFiles": "**/TEST-*.xml",
+                            "testRunTitle": "",
+                            "enableCodeCoverage": "false",
+                            "testFramework": "Mocha",
+                            "srcFiles": "",
+                            "testFiles": "test/*.js"
+                        }
+                    },
+                    {
+                        "environment": {},
+                        "enabled": true,
+                        "continueOnError": false,
+                        "alwaysRun": false,
+                        "displayName": "Replace js with minifiedjs",
+                        "timeoutInMinutes": 0,
+                        "condition": "succeeded()",
+                        "refName": "CopyFiles3",
+                        "task": {
+                            "id": "5bfb729a-a7c8-4a78-a7c3-8d717bb7c13c",
+                            "versionSpec": "2.*",
+                            "definitionType": "task"
+                        },
+                        "inputs": {
+                            "SourceFolder": "$(Build.SourcesDirectory)\\WebResources\\minifiedjs",
+                            "Contents": "**",
+                            "TargetFolder": "$(Build.SourcesDirectory)\\WebResources",
+                            "CleanTargetFolder": "false",
+                            "OverWrite": "true",
+                            "flattenFolders": "false"
                         }
                     },
                     {
@@ -490,6 +484,31 @@
                             "tarCompression": "gz",
                             "archiveFile": "$(build.artifactstagingdirectory)/DeploymentPackage/bin/Release/PkgFolder/data.zip",
                             "replaceExistingArchive": "true"
+                        }
+                    },
+                    {
+                        "environment": {},
+                        "enabled": false,
+                        "continueOnError": true,
+                        "alwaysRun": false,
+                        "displayName": "Publish symbols path: ",
+                        "timeoutInMinutes": 0,
+                        "refName": "PublishSymbols5",
+                        "task": {
+                            "id": "0675668a-7bba-4ccb-901d-5ad6554ca653",
+                            "versionSpec": "1.*",
+                            "definitionType": "task"
+                        },
+                        "inputs": {
+                            "SymbolsPath": "",
+                            "SearchPattern": "**\\bin\\**\\*.pdb",
+                            "SymbolsFolder": "",
+                            "SkipIndexing": "false",
+                            "TreatNotIndexedAsWarning": "false",
+                            "SymbolsMaximumWaitTime": "",
+                            "SymbolsProduct": "",
+                            "SymbolsVersion": "",
+                            "SymbolsArtifactName": "Symbols_$(BuildConfiguration)"
                         }
                     },
                     {
@@ -610,8 +629,8 @@
     "path": "\\",
     "type": 2,
     "queueStatus": 0,
-    "revision": 24,
-    "createdDate": "2017-11-17T02:26:31.893Z",
+    "revision": 26,
+    "createdDate": "2017-11-27T16:05:25.350Z",
     "project": {
         "id": "7895651c-7f1a-466c-aa8f-0352510e6c2c",
         "name": "MyFirstProject",

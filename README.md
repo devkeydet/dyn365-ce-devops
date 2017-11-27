@@ -24,6 +24,7 @@ The reference build definitions show two different build scenarios:
     * Build all the assets from source control into their deployable form
         * Reports unit test pass/fail for both .net and javascript code as part of build reporting
         * Reports code coverage of unit tests 
+        * Minifies JavaScript using [Gulp](https://gulpjs.com/)
         * Solution package zip files
             * Packages Dynamics 365 configuration xml files using [Solution Packager](https://msdn.microsoft.com/en-us/library/jj602987.aspx)
         * Starter data import zip files 
