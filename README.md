@@ -61,6 +61,12 @@ The reference release definitions show how to deploy assets from the build to th
 The source code of the sample application has a project called [UIAutomationTests](https://github.com/devkeydet/CrmAsyncRequestResponseSampleV2/tree/master/UIAutomationTests), which uses https://github.com/microsoft/easyrepro to demonstrate how perform automated UI testing for Dynamics 365.  However, the tests are not yet incorporated into a release as a predeployment quality gate.  There is a known issue when using https://github.com/microsoft/easyrepro with the phantomjs driver for headless test execution.  Therefore, we cannot run the UI automation tests using the hosted VSTS agent.  The hosted agent doesn't have browsers installed.  The workaround today is to deploy your own agent.  Doing so would allow you to install a browser and use one of the selenium browser drivers.  See https://docs.microsoft.com/en-us/vsts/build-release/test/continuous-test-selenium for more details.
 
 # Getting Started
+## Prereqs
+1. [Primary Build.json](https://github.com/devkeydet/dyn365-ce-devops/blob/master/Primary%20Build.json) requires several VSTS extensions to fully function. Before beginning please install the following extensions.
+   - [Dynamics 365 Build Tools](https://marketplace.visualstudio.com/items?itemName=WaelHamze.xrm-ci-framework-build-tasks)
+   - [RegEx Match & Replace](https://marketplace.visualstudio.com/items?itemName=kasunkodagoda.regex-match-replace)
+   - [File Operations](https://marketplace.visualstudio.com/items?itemName=KirKone.fileoperations)
+## Step by Step 
 Please watch the following videos to help you understand how to get started:
 
 *Part I* - This video walks through [Primary Build.json](https://github.com/devkeydet/dyn365-ce-devops/blob/master/Primary%20Build.json) and [Primary Release - Dynamics Only.json](https://github.com/devkeydet/dyn365-ce-devops/blob/master/Primary%20Release%20-%20Dynamics%20Only.json), with a goal of helping you understand how they work and how to import them into your own VSTS project.
