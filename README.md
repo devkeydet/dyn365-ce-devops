@@ -26,9 +26,9 @@ The reference build definitions show two different build scenarios:
         * Reports code coverage of unit tests 
         * Minifies JavaScript using [Gulp](https://gulpjs.com/)
         * Solution package zip files
-            * Packages Dynamics 365 configuration xml files using [Solution Packager](https://msdn.microsoft.com/en-us/library/jj602987.aspx)
+            * Packages Dynamics 365 configuration xml files using [Solution Packager](https://docs.microsoft.com/en-us/dynamics365/customer-engagement/developer/use-source-control-solution-files)
         * Starter data import zip files 
-            * Zips up xml files produced by the [Configuration Migration](https://technet.microsoft.com/library/dn647421.aspx) tool to setup sample data
+            * Zips up xml files produced by the [Configuration Migration](https://docs.microsoft.com/en-us/dynamics365/customer-engagement/admin/manage-configuration-data) tool to setup sample data
         * .NET dlls for both Dynamics 365 and an [Azure Function App](https://azure.microsoft.com/en-us/services/functions/)
         * etc.
 * [Patch Build.json](https://github.com/devkeydet/dyn365-ce-devops/blob/master/Patch%20Build.json) - shows how to use VSTS to:
@@ -37,7 +37,7 @@ The reference build definitions show two different build scenarios:
 The reference release definitions show how to deploy assets from the build to the target environment(s).  Each does the following:
 * Primary Release - Dynamics Only.json
     * Resets a Dynamics 365 instance by using the [Online Management API for Dynamics 365 Customer Engagement](https://docs.microsoft.com/en-us/dynamics365/customer-engagement/developer/online-management-api)
-    * Deploys the Dynamics 365 package and sample/intiial data using [Package Deployer](https://msdn.microsoft.com/en-us/library/dn688182.aspx)
+    * Deploys the Dynamics 365 package and sample/intiial data using [Package Deployer](https://docs.microsoft.com/en-us/dynamics365/customer-engagement/admin/deploy-packages-using-package-deployer-windows-powershell)
         * Demonstrates how to activate plugins *after* the sample/initial data is imported
     * Updates plugin [Secure Configuration](https://us.hitachi-solutions.com/blog/use-secure-vs-unsecure-configuration-plugins/) since it doesn't get stored in the solution package and can vary by environment
     * Backs up the Dynamics 365 instance using the  [Online Management API for Dynamics 365 Customer Engagement](https://docs.microsoft.com/en-us/dynamics365/customer-engagement/developer/online-management-api)
@@ -48,7 +48,7 @@ The reference release definitions show how to deploy assets from the build to th
     * Gets configuration data from the Azure deployment for use in latter parts of the deployment process
     * Deploys Azure Functions dlls from the build
     * Applies configuration settings to the Azure environment
-    * Deploys the Dynamics 365 package and sample data using [Package Deployer](https://msdn.microsoft.com/en-us/library/dn688182.aspx)
+    * Deploys the Dynamics 365 package and sample data using [Package Deployer](https://docs.microsoft.com/en-us/dynamics365/customer-engagement/admin/deploy-packages-using-package-deployer-windows-powershell)
     * Updates plugin [Secure Configuration](https://us.hitachi-solutions.com/blog/use-secure-vs-unsecure-configuration-plugins/) since it doesn't get stored in the solution package and can vary by environment
     * Backs up the Dynamics 365 instance using the [Online Management API for Dynamics 365 Customer Engagement](https://docs.microsoft.com/en-us/dynamics365/customer-engagement/developer/online-management-api)
 * Patch Release - Dynamics Only.json
