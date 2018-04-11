@@ -66,7 +66,7 @@ The source code of the sample application has a project called [UIAutomationTest
    - [Dynamics 365 Build Tools](https://marketplace.visualstudio.com/items?itemName=WaelHamze.xrm-ci-framework-build-tasks)
    - [RegEx Match & Replace](https://marketplace.visualstudio.com/items?itemName=kasunkodagoda.regex-match-replace)
    - [File Operations](https://marketplace.visualstudio.com/items?itemName=KirKone.fileoperations)
-## Step by Step 
+## Reference Examples Step by Step 
 Please watch the following videos to help you understand how to get started:
 
 *Part I* - This video walks through [Primary Build.json](https://github.com/devkeydet/dyn365-ce-devops/blob/master/Primary%20Build.json) and [Primary Release - Dynamics Only.json](https://github.com/devkeydet/dyn365-ce-devops/blob/master/Primary%20Release%20-%20Dynamics%20Only.json), with a goal of helping you understand how they work and how to import them into your own VSTS project.
@@ -76,3 +76,14 @@ Please watch the following videos to help you understand how to get started:
 *Part II* - This video assumes you watched *Part I*.  It builds on *Part I*, with a goal of helping you understand how to import and execute [Primary Release - Dynamics + Azure.json](https://github.com/devkeydet/dyn365-ce-devops/blob/master/Primary%20Release%20-%20Dynamics%20%2B%20Azure.json), which includes a more elaborate example, including provisioning, deploying and configuring Azure services and code that work as part of the overall application.
 
 [![Video walkthrough part two](https://img.youtube.com/vi/hlAEMr4xlCY/0.jpg)](https://www.youtube.com/watch?v=hlAEMr4xlCY)
+
+## From Scratch
+The previous videos walk you through the reference examples.  If you would like a "from scratch" walkthrough of how to start with empty Dynamics 365 & Visual Studio solutions and get to a basic DevOps starting point, please review the following videos:
+
+*Zero to full source control of a model-driven PowerApp using spkl*
+[![Video walkthrough part two](https://img.youtube.com/vi/nutWII2ntVQ/0.jpg)](https://www.youtube.com/watch?v=nutWII2ntVQ)
+
+*Build and deployment automation of a model-driven PowerApp using VSTS*
+[![Video walkthrough part two](https://img.youtube.com/vi/R18HOh2j40k/0.jpg)](https://www.youtube.com/watch?v=R18HOh2j40k)
+
+NOTE: As of the spring 2018 release, the core platform in Dynamics 365 (often referred to as XRM) is now available as part of PowerApps.  Specifically, [model-driven](https://docs.microsoft.com/en-us/powerapps/maker/model-driven-apps/model-driven-app-overview) [PowerApps](https://docs.microsoft.com/en-us/powerapps/maker/index) which require the [Common Data Service](https://docs.microsoft.com/en-us/powerapps/maker/common-data-service/data-platform-intro).  Said another way, because of this evolution and new branding, the Dynamics 365 CE apps are now built on PowerApps and the Common Data Service.  As we evolve this GitHub project, we will work on updating the terminology used in order to be consistent.
